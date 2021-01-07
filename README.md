@@ -6,7 +6,12 @@ Semester](https://missing.csail.mit.edu).
 
 ## Schedule
 
-TBD
+The [topics/](topics/) directory contains the materials we will cover. It is
+organized into topics and each topic will generally take about a week. Keep in
+mind, however, that many topics will build on one another. This means that you
+really don't want to fall behind. If you miss a week, be sure to catch up.
+
+  1. [Shell Overview](topics/01-shell-overview/)
 
 ## Instruction
 
