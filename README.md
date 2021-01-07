@@ -1,6 +1,6 @@
 # The Missing Course
 
-A [University of Montana](https://umt.edu) course about helpful software
+A [University of Montana](https://umt.edu) course covering helpful software
 development tools and techniques based on [The Missing
 Semester](https://missing.csail.mit.edu).
 
@@ -26,6 +26,8 @@ Students will submit each assignment by creating a "pull request" (PR) against
 this GitHub repository. Don't worry, we'll learn what that means before anything
 is due. This pattern will simulate a standard software development workflow.
 You can think of it as one big, semester-long group project.
+
+Assignments can be found in their respective [topics/](topics/) directory.
 
 ## Grading
 
