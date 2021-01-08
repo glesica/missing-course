@@ -22,6 +22,9 @@ hours will be held virtually in an on-demand fashion. Email the instructor to
 schedule an appointment. The instructor is also available on Microsoft Teams
 (see below).
 
+Assuming no technology issues, lectures will be recorded and posted on the
+course web site and/or Moodle.
+
 ## Assignments
 
 Students will submit each assignment by creating a "pull request" (PR) against

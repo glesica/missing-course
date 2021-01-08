@@ -6,6 +6,7 @@
   - [Zsh Shell](https://www.zsh.org)
   - [Oh My Zsh](https://ohmyz.sh)
   - [Microsoft PowerShell](https://docs.microsoft.com/en-us/powershell/)
+  - [Intro to the Shell](https://youtu.be/ygLXHs2Vfck)
 
 A text-based shell is one of the oldest means of interacting with a computer,
 and almost certainly the oldest still in common use. It is no surprise, then,
