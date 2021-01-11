@@ -34,6 +34,16 @@ You can think of it as one big, semester-long group project.
 
 Assignments can be found in their respective [topics/](topics/) directory.
 
+## Prerequisites
+
+### Linux on Windows
+
+It is possible to install a Linux distribution under Windows 10 using WSL
+(Windows Subsystem for Linux). This will be required for some of the topics we
+study during this course. See the link below for instructions.
+
+  - <https://docs.microsoft.com/en-us/windows/wsl/install-win10>
+
 ## Grading
 
 Assignments will be evaluated automatically or by the instructor and grades will
