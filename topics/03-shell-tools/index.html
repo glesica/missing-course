@@ -153,13 +153,8 @@
 <h1 id="shell-tools">Shell Tools</h1>
 <ul>
 <li><a href="https://missing.csail.mit.edu/2020/shell-tools/">MIT Page</a> (second half)</li>
-<li><a href="https://github.com/ggreer/the_silver_searcher">The Silver Searcher</a></li>
-<li><a href="https://github.com/BurntSushi/ripgrep">Ripgrep</a></li>
 <li><a href="https://www.gnu.org/software/parallel/">GNU Parallel</a></li>
 <li><a href="https://www.usenix.org/system/files/login/articles/105438-Tange.pdf">GNU Parallel Tutorial</a></li>
-<li><a href="https://linux.die.net/man/1/tree">Tree</a></li>
-<li><a href="https://github.com/wting/autojump">Autojump</a></li>
-<li><a href="https://github.com/clvv/fasd">Fasd</a></li>
 </ul>
 <p>There exists a plethora of useful command line tools. We’re going to take a look at a few that are likely to be helpful as you work your way through school and begin a career as a computer scientist or software developer.</p>
 <h2 id="history">History</h2>
@@ -169,8 +164,80 @@
 </ul>
 <p>There is also a command called <code>history</code> that will simply print a list of your past commands. This can be useful if you want to copy-paste commands into a document or otherwise make use of your history in ways other than running a single command.</p>
 <h2 id="navigate-and-browse">Navigate and Browse</h2>
-<p>TODO: pushd and popd</p>
+<ul>
+<li><a href="https://linux.die.net/man/1/tree">Tree</a></li>
+<li><a href="https://github.com/wting/autojump">Autojump</a></li>
+<li><a href="https://github.com/clvv/fasd">Fasd</a></li>
+</ul>
+<p>We already looked at <code>cd</code>, <code>ls</code>, and <code>pwd</code> for navigating the filesystem, but there are a few other commands that can make life easier.</p>
+<h3 id="tree">Tree</h3>
+<p>This command, which will need to be installed on most systems (you can use <code>brew install tree</code> on a Mac), prints a directory hierarchy as a pleasant ASCII art diagram. For example, running it on this repository directory:</p>
+<pre><code>missing-course on  master [!]
+➜ tree .
+.
+├── AUTHORS
+├── LICENSE
+├── Makefile
+├── README.md
+├── index.html
+├── media
+│   ├── header.html
+│   ├── header.jpg
+│   └── videos
+│       └── ctrl-r-demo.mov
+└── topics
+    ├── 01-shell-overview
+    │   ├── README.md
+    │   └── index.html
+    ├── 02-shell-scripting
+    │   ├── README.md
+    │   └── index.html
+    ├── 03-shell-tools
+    │   ├── README.md
+    │   └── index.html
+    ├── README.md
+    └── index.html
+
+6 directories, 16 files</code></pre>
+<h3 id="stack-commands">Stack Commands</h3>
+<p>The <code>pushd</code> and <code>popd</code> commands allow you to create a stack of directories so that you can retrace your steps back to your starting position.</p>
+<pre><code># Assume we start in the home directory
+cd
+
+# Time to work on some code
+cd Code/awesome-project
+
+# Go update the paper we&#39;re writing about this project
+pushd ~/Documents/awesome-project-paper
+
+# Jump back to the code without typing the directory again
+popd</code></pre>
+<h3 id="fasd-and-autojump">Fasd and Autojump</h3>
 <h2 id="grep-and-friends">Grep and Friends</h2>
+<ul>
+<li><a href="https://github.com/ggreer/the_silver_searcher">The Silver Searcher</a></li>
+<li><a href="https://github.com/BurntSushi/ripgrep">Ripgrep</a></li>
+</ul>
+<p>Grep can find occurrences of a specific string or regular expression within text files.</p>
+<pre><code># Find &quot;Missing&quot; in the file README.md
+grep Missing README.md`
+
+# Find &quot;command&quot; in all files under the current directory, recursively
+grep -r Missing .
+
+# Only print filenames, not the line that matched
+grep -lr command .
+
+# Print some context around each match (2 lines)
+grep -r -C2 command .
+
+# Print filenames that did not match
+grep -rL Missing .</code></pre>
+<h3 id="history-redux">History Redux</h3>
+<p>Remember the <code>history</code> command? We can use a Unix pipe along with grep to find all similar commands we’ve run in the past. For example, sometimes it is useful to recall which packages have been installed through Homebrew. The following command can find all invocations of <code>brew install</code>:</p>
+<pre><code>history | grep &quot;brew install&quot;</code></pre>
+<h3 id="silver-searcher-and-ripgrep">Silver Searcher and Ripgrep</h3>
+<p>These tools act a lot like Grep, but provide better performance and other features that make them more pleasant to use.</p>
 <h2 id="find">Find</h2>
 <h2 id="parallelize-commands">Parallelize Commands</h2>
 </body>
