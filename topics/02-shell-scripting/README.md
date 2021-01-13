@@ -43,6 +43,37 @@ echo hello world
 
 ## Variables
 
+Variables in shell scripts are used like those in other programming languages,
+but there are some differences in syntax and semantics.
+
+```
+#!/bin/sh
+
+set -e
+
+# Set a to a string
+a="hi there"
+echo $a
+
+# This won't do quite what it seems
+a="hi   there"
+echo $a
+```
+
+If we run this code, we get mostly what we expect, but why doesn't the second
+version print the extra spaces? That's because variables in shell scripts are
+simply interpolated into the script, so `echo $a` becomes `echo hi   there`,
+which is a call to `echo` with two arguments. As we know, echo joins its
+arguments with a single space and then prints the result.
+
+If we want the extra spaces, we need to wrap the variable in quotes where we use
+it so that the shell knows it is supposed to be treated as a single value.
+
+```
+a="hi there"
+echo "$a"
+```
+
 ## Control Flow
 
 ## Capturing Output
