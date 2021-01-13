@@ -156,5 +156,20 @@
 </ul>
 <p>While most shells are themselves fully-featured programming languages, the most common use of shell scripting to automate or tie together other programs using relatively simple sequences of commands.</p>
 <p>We’ll practice writing scripts for a couple different scenarios and think about how shell scripts can be useful in day-to-day life, even for students.</p>
+<h2 id="shebang-and-preamble">Shebang and Preamble</h2>
+<p>We almost always want to start our scripts with a “shebang” line, which tells the shell how to execute the script. For example, the line below tells the shell to use the program located at <code>/bin/sh</code> (a simple, but universal shell that ships with all Unix-like systems) to run the script.</p>
+<pre><code>#!/bin/sh</code></pre>
+<p>We can use other programs as well. The shebang line below will run the script with the user’s standard Python 3 interpreter.</p>
+<pre><code>#!/usr/bin/env python3</code></pre>
+<p>When we use <code>/bin/sh</code> or another, similar, shell, there are options that we can set to change how the interpreter behaves. One common options is <code>set -x</code>, which causes the script to terminate if any of the commands within it fail.</p>
+<p>Putting these things together, a trivially simple script might look like this:</p>
+<pre><code>#!/bin/sh
+
+set -x
+
+echo hello world</code></pre>
+<h2 id="variables">Variables</h2>
+<h2 id="control-flow">Control Flow</h2>
+<h2 id="capturing-output">Capturing Output</h2>
 </body>
 </html>

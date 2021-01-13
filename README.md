@@ -34,6 +34,15 @@ You can think of it as one big, semester-long group project.
 
 Assignments can be found in their respective [topics/](topics/) directory.
 
+## Reading
+
+There isn't a textbook, but there are a couple books that students might find
+informative. These are listed below. This list will likely be updated as the
+semester progresses.
+
+  - [Classic Shell Scripting](https://www.oreilly.com/library/view/classic-shell-scripting/0596005954/)
+  - [A Philosophy of Software Design](https://www.goodreads.com/book/show/39996759-a-philosophy-of-software-design)
+
 ## Prerequisites
 
 ### Linux on Windows
