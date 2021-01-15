@@ -169,7 +169,27 @@ set -x
 
 echo hello world</code></pre>
 <h2 id="variables">Variables</h2>
+<p>Variables in shell scripts are used like those in other programming languages, but there are some differences in syntax and semantics.</p>
+<pre><code>#!/bin/sh
+
+set -e
+
+# Set a to a string
+a=&quot;hi there&quot;
+echo $a
+
+# This won&#39;t do quite what it seems
+a=&quot;hi   there&quot;
+echo $a</code></pre>
+<p>If we run this code, we get mostly what we expect, but why doesn’t the second version print the extra spaces? That’s because variables in shell scripts are simply interpolated into the script, so <code>echo $a</code> becomes <code>echo hi   there</code>, which is a call to <code>echo</code> with two arguments. As we know, echo joins its arguments with a single space and then prints the result.</p>
+<p>If we want the extra spaces, we need to wrap the variable in quotes where we use it so that the shell knows it is supposed to be treated as a single value.</p>
+<pre><code>a=&quot;hi there&quot;
+echo &quot;$a&quot;</code></pre>
 <h2 id="control-flow">Control Flow</h2>
+<p>We have most of the usual stuff here. See <code>control.sh</code> for a couple examples. Do note, however, that the syntax is, as with variable assignment, specific and inflexible.</p>
 <h2 id="capturing-output">Capturing Output</h2>
+<p>We can run a command and save its output in two ways. The first is older, and still often used, but the second is the modern recommendation.</p>
+<pre><code>files=`ls`
+files=$(ls)</code></pre>
 </body>
 </html>
