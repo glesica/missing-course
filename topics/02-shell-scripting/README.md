@@ -76,5 +76,17 @@ echo "$a"
 
 ## Control Flow
 
+We have most of the usual stuff here. See `control.sh` for a couple examples. Do
+note, however, that the syntax is, as with variable assignment, specific and
+inflexible.
+
 ## Capturing Output
+
+We can run a command and save its output in two ways. The first is older, and
+still often used, but the second is the modern recommendation.
+
+```
+files=`ls`
+files=$(ls)
+```
 
