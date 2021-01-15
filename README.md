@@ -36,6 +36,9 @@ recording). These are on a best-effort basis, so some may be missing.
     shell scripting
   - [January 15](https://youtu.be/5DhFmcJJe-Y) - shell scripting
 
+There is also a playlist with all lecture videos:
+<https://youtube.com/playlist?list=PLq7UdDyGlli64bM1rewiDHtxxWMfk-ytu>.
+
 ## Assignments
 
 Students will submit each assignment by creating a "pull request" (PR) against
