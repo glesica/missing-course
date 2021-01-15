@@ -92,3 +92,46 @@ files=`ls`
 files=$(ls)
 ```
 
+## Combining Commands
+
+We have a couple constructs that can help us combine commands together to
+achieve more complicated outcomes easily.
+
+The double ampersand can be thought of a little like a logical "and" in many
+programming languages in that it will "short circuit". The first command to fail
+will prevent the rest from running. It can also be used to run a command in a
+different directory.
+
+```
+<command> && <command>
+```
+
+For example:
+
+```
+# Run a script inside a specific directory
+cd data && ../process_data.py
+
+# Prepare to run a command, then run it,
+# if the first step fails, the second step won't happen
+./prep_data.py && ./process_data.py
+```
+
+The double pipe can be thought of like a logical "or". If the first command
+succeeds then the second command will not run because the overall expression is
+already "true".
+
+```
+<command> || <command>
+```
+
+For example:
+
+```
+# Prepare some data only if it hasn't already been done
+./check_data.py || ./prep_data.py
+
+# Print a custom error if a command fails
+./process_data.py || echo "failed to process data"
+```
+
