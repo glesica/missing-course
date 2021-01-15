@@ -1,6 +1,8 @@
 # Shell Scripting
 
   - [MIT Page](https://missing.csail.mit.edu/2020/shell-tools/) (first half)
+  - [variable.sh](variable.sh)
+  - [control.sh](control.sh)
 
 While most shells are themselves fully-featured programming languages, the most
 common use of shell scripting to automate or tie together other programs using
