@@ -12,8 +12,9 @@ mind, however, that many topics will build on one another. This means that you
 really don't want to fall behind. If you miss a week, be sure to catch up.
 
   1. [Shell Overview](topics/01-shell-overview/)
-  2. [Shell Scripting](topics/02-shell-scripting/)
-  3. [Shell Tools](topics/03-shell-tools/)
+  1. [Shell Scripting](topics/02-shell-scripting/)
+  1. [Shell Tools](topics/03-shell-tools/)
+  1. [Editors](topics/04-editors/)
 
 ## Instruction
 
