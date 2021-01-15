@@ -25,6 +25,16 @@ schedule an appointment. The instructor is also available on Microsoft Teams
 Assuming no technology issues, lectures will be recorded and posted on the
 course web site and/or Moodle.
 
+### Lecture Videos
+
+Below you'll find videos of each lecture (assuming nothing went wrong with the
+recording). These are on a best-effort basis, so some may be missing.
+
+  - [January 11](https://youtu.be/ankQNKqupWI) - the shell
+  - [January 13](https://youtu.be/voc3sfv-SDw) - more shell and starting on
+    shell scripting
+  - [January 15](https://youtu.be/5DhFmcJJe-Y) - shell scripting
+
 ## Assignments
 
 Students will submit each assignment by creating a "pull request" (PR) against
