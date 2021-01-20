@@ -35,6 +35,7 @@ recording). These are on a best-effort basis, so some may be missing.
   - [January 13](https://youtu.be/voc3sfv-SDw) - more shell and starting on
     shell scripting
   - [January 15](https://youtu.be/5DhFmcJJe-Y) - shell scripting
+  - [January 20](https://youtu.be/3-bpAPSkmiE) - shell scripting and beginning tools
 
 There is also a playlist with all lecture videos:
 <https://youtube.com/playlist?list=PLq7UdDyGlli64bM1rewiDHtxxWMfk-ytu>.
