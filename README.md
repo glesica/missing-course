@@ -36,6 +36,7 @@ recording). These are on a best-effort basis, so some may be missing.
     shell scripting
   - [January 15](https://youtu.be/5DhFmcJJe-Y) - shell scripting
   - [January 20](https://youtu.be/3-bpAPSkmiE) - shell scripting and beginning tools
+  - [January 22](https://youtu.be/0t4VOTBayGs) - more shell tools
 
 There is also a playlist with all lecture videos:
 <https://youtube.com/playlist?list=PLq7UdDyGlli64bM1rewiDHtxxWMfk-ytu>.
