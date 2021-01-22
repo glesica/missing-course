@@ -47,7 +47,7 @@ this GitHub repository. Don't worry, we'll learn what that means before anything
 is due. This pattern will simulate a standard software development workflow.
 You can think of it as one big, semester-long group project.
 
-Assignments can be found in their respective [topics/](topics/) directory.
+Assignments can be found in the [assignments/](assignments/) directory.
 
 ## Reading
 
