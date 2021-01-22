@@ -87,6 +87,21 @@ popd
 
 ### Fasd and Autojump
 
+[Fasd](https://github.com/clvv/fasd) and
+[Autojump](https://github.com/wting/autojump) allow the user to navigate to
+directories they have previously visited using "fuzzy" matching and the concept
+of "frecency" (frequency combined with recent). For example, starting in my home
+directory I can jump all the way into the directory belonging to a particular
+project (that I work on semi-regularly) simply by providing the name of the
+project's directory (or even part of it). Note that `j` here is an alias that
+runs autojump with the correct arguments.
+
+```
+~ $ # We start in the home directory
+~ $ j polyA
+~/Code/TravisWheelerLab/polyA $ # Now we're here!
+```
+
 ## Grep and Friends
 
   - [The Silver Searcher](https://github.com/ggreer/the_silver_searcher)
@@ -130,7 +145,33 @@ features that make them more pleasant to use.
 
 ## Find
 
+We've talked a lot about how to navigate the file system and work with files,
+but what about finding files based on their name or other characteristics? For
+this, we have the `find` command.
 
+```
+find . -name myfile
+
+# We can also filter by type, which is often useful
+# for limiting our results to only regular files
+# (excluding directories and symlinks, for example).
+find . -type f -name myfile
+
+# It is also possible to negate filters. The command
+# below finds all files that do not have a .py
+# extension.
+find . -type f ! -name '*.py'
+```
+
+It is also possible to have find run a command on each file it finds. This can
+be helpful if you want to run a command against several different files to
+produce an output for each.
+
+```
+# Run the mypy type checker against all Python files
+# found in or below the current directory.
+find . -type f -name '*.py' -exec mypy {} \;
+```
 
 ## Parallelize Commands
 
