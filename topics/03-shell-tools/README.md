@@ -1,8 +1,6 @@
 # Shell Tools
 
   - [MIT Page](https://missing.csail.mit.edu/2020/shell-tools/) (second half)
-  - [GNU Parallel](https://www.gnu.org/software/parallel/)
-  - [GNU Parallel Tutorial](https://www.usenix.org/system/files/login/articles/105438-Tange.pdf)
 
 There exists a plethora of useful command line tools. We're going to take a look
 at a few that are likely to be helpful as you work your way through school and
@@ -175,5 +173,66 @@ find . -type f -name '*.py' -exec mypy {} \;
 
 ## Parallelize Commands
 
+  - [GNU Parallel](https://www.gnu.org/software/parallel/)
+  - [GNU Parallel Tutorial](https://www.usenix.org/system/files/login/articles/105438-Tange.pdf)
 
+You might notice that the `find` command above takes a few seconds if there are
+many Python files. That's partly because mypy is run against each file in
+serial. We could speed things up by running mypy in parallel and we can use the
+`parallel` command to do it. Note: this is another one of those commands you'll
+probably have to install, it doesn't ship with most systems.
+
+Let's play around a bit...
+
+```
+# Create a bunch of empty files
+touch file-{001..100}.txt
+
+# Put some data in each file, in this case
+# just a bunch of words
+find . -name '*.txt' -exec sh -c "head -100000 /usr/share/dict/words > {}" \;
+
+# Use find to compress all of the files
+# and time how long it takes, then decompress
+time find . -name '*.txt' -exec gzip {} \;
+time find . -name '*.gz' -exec gunzip {} \;
+
+# Use parallel to compress all of the files
+# and time how long it takes, then decompress
+time parallel gzip ::: *.txt
+time parallel gunzip ::: *.gz
+```
+
+You'll notice that there wasn't much difference, that's because our task is
+mostly I/O bound anyway, but take a look at the CPU percentage, you can tell the
+tasks are being parallelized because the CPU usage is much higher in the second
+version.
+
+Now let's create a more complicated example that should actually result in
+better performance when we parallelize the work. This is still going to be
+rather contrived, but it shouldn't be hard to imagine how it could be translated
+to real work.
+
+First, we'll write a program that does something CPU bound. Then we'll want a
+quick script to create bogus data for that program to operate on.
+
+  - [is_prime.py](is_prime.py) - `./is_prime.py <file>`
+  - [random_numbers.py](random_numbers.py) - `./random_numbers.py <N> <size>`
+
+Now let's try the same thing we did above, compare the performance of `find` and
+`parallel`.
+
+```
+mkdir scratch
+cd scratch
+touch numbers-{00..20}.txt
+find . -name '*.txt' -exec sh -c "../random_numbers.py 10 24 > {}" \;
+
+time find . -name '*.txt' -exec ../is_prime.py {} \;
+time parallel ../is_prime.py ::: *.txt
+```
+
+You should see that `parallel` is quite a bit faster now that our work is CPU
+bound. On my machine, `find` takes about 35 seconds and `parallel` takes about 8
+seconds.
 

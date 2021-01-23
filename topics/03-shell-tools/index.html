@@ -161,8 +161,6 @@
 <h1 id="shell-tools">Shell Tools</h1>
 <ul>
 <li><a href="https://missing.csail.mit.edu/2020/shell-tools/">MIT Page</a> (second half)</li>
-<li><a href="https://www.gnu.org/software/parallel/">GNU Parallel</a></li>
-<li><a href="https://www.usenix.org/system/files/login/articles/105438-Tange.pdf">GNU Parallel Tutorial</a></li>
 </ul>
 <p>There exists a plethora of useful command line tools. We’re going to take a look at a few that are likely to be helpful as you work your way through school and begin a career as a computer scientist or software developer.</p>
 <h2 id="history">History</h2>
@@ -268,5 +266,43 @@ find . -type f ! -name &#39;*.py&#39;</code></pre>
 # found in or below the current directory.
 find . -type f -name &#39;*.py&#39; -exec mypy {} \;</code></pre>
 <h2 id="parallelize-commands">Parallelize Commands</h2>
+<ul>
+<li><a href="https://www.gnu.org/software/parallel/">GNU Parallel</a></li>
+<li><a href="https://www.usenix.org/system/files/login/articles/105438-Tange.pdf">GNU Parallel Tutorial</a></li>
+</ul>
+<p>You might notice that the <code>find</code> command above takes a few seconds if there are many Python files. That’s partly because mypy is run against each file in serial. We could speed things up by running mypy in parallel and we can use the <code>parallel</code> command to do it. Note: this is another one of those commands you’ll probably have to install, it doesn’t ship with most systems.</p>
+<p>Let’s play around a bit…</p>
+<pre><code># Create a bunch of empty files
+touch file-{001..100}.txt
+
+# Put some data in each file, in this case
+# just a bunch of words
+find . -name &#39;*.txt&#39; -exec sh -c &quot;head -100000 /usr/share/dict/words &gt; {}&quot; \;
+
+# Use find to compress all of the files
+# and time how long it takes, then decompress
+time find . -name &#39;*.txt&#39; -exec gzip {} \;
+time find . -name &#39;*.gz&#39; -exec gunzip {} \;
+
+# Use parallel to compress all of the files
+# and time how long it takes, then decompress
+time parallel gzip ::: *.txt
+time parallel gunzip ::: *.gz</code></pre>
+<p>You’ll notice that there wasn’t much difference, that’s because our task is mostly I/O bound anyway, but take a look at the CPU percentage, you can tell the tasks are being parallelized because the CPU usage is much higher in the second version.</p>
+<p>Now let’s create a more complicated example that should actually result in better performance when we parallelize the work. This is still going to be rather contrived, but it shouldn’t be hard to imagine how it could be translated to real work.</p>
+<p>First, we’ll write a program that does something CPU bound. Then we’ll want a quick script to create bogus data for that program to operate on.</p>
+<ul>
+<li><a href="is_prime.py">is_prime.py</a> - <code>./is_prime.py &lt;file&gt;</code></li>
+<li><a href="random_numbers.py">random_numbers.py</a> - <code>./random_numbers.py &lt;N&gt; &lt;size&gt;</code></li>
+</ul>
+<p>Now let’s try the same thing we did above, compare the performance of <code>find</code> and <code>parallel</code>.</p>
+<pre><code>mkdir scratch
+cd scratch
+touch numbers-{00..20}.txt
+find . -name &#39;*.txt&#39; -exec sh -c &quot;../random_numbers.py 10 24 &gt; {}&quot; \;
+
+time find . -name &#39;*.txt&#39; -exec ../is_prime.py {} \;
+time parallel ../is_prime.py ::: *.txt</code></pre>
+<p>You should see that <code>parallel</code> is quite a bit faster now that our work is CPU bound. On my machine, <code>find</code> takes about 35 seconds and <code>parallel</code> takes about 8 seconds.</p>
 </body>
 </html>
