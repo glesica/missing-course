@@ -62,6 +62,10 @@ this GitHub repository. Don't worry, we'll learn what that means before anything
 is due. This pattern will simulate a standard software development workflow.
 You can think of it as one big, semester-long group project.
 
+Due dates are going to be a pretty relaxed affair. You'll lose a point for every
+day something is late. The idea here is just to keep the whole class from
+turning in every assignment on the last day of the semester.
+
 Assignments can be found in the [assignments/](assignments/) directory.
 
 ## Reading
