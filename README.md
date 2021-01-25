@@ -23,8 +23,21 @@ hours will be held virtually in an on-demand fashion. Email the instructor to
 schedule an appointment. The instructor is also available on Microsoft Teams
 (see below).
 
+If you need help with an assignment, it is generally a good idea to include
+whatever code or data you are working with when you email the instructor. You
+can do this using the `tar` command.
+
+To create a zip file that includes all the files in a particular directory, use
+the following (in this case, the directory you want to zip is called "the_dir"):
+
+```
+tar czf the_dir.tgz the_dir
+```
+
+After you've done this, you can attach `the_dir.tgz` to an email.
+
 Assuming no technology issues, lectures will be recorded and posted on the
-course web site and/or Moodle.
+course web site and / or Moodle.
 
 ### Lecture Videos
 
