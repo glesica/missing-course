@@ -247,7 +247,7 @@ grep -rL Missing .</code></pre>
 <p>Remember the <code>history</code> command? We can use a Unix pipe along with grep to find all similar commands we’ve run in the past. For example, sometimes it is useful to recall which packages have been installed through Homebrew. The following command can find all invocations of <code>brew install</code>:</p>
 <pre><code>history | grep &quot;brew install&quot;</code></pre>
 <h3 id="silver-searcher-and-ripgrep">Silver Searcher and Ripgrep</h3>
-<p>These tools act a lot like Grep, but provide better performance and other features that make them more pleasant to use.</p>
+<p>These tools act a lot like Grep, but provide better performance and other features that make them more pleasant to use. For example, they can respect your version control system’s “ignore” file to avoid generating extra, useless results.</p>
 <h2 id="find">Find</h2>
 <p>We’ve talked a lot about how to navigate the file system and work with files, but what about finding files based on their name or other characteristics? For this, we have the <code>find</code> command.</p>
 <pre><code>find . -name myfile

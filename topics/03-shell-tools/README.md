@@ -139,7 +139,9 @@ history | grep "brew install"
 ### Silver Searcher and Ripgrep
 
 These tools act a lot like Grep, but provide better performance and other
-features that make them more pleasant to use.
+features that make them more pleasant to use. For example, they can respect your
+version control system's "ignore" file to avoid generating extra, useless
+results.
 
 ## Find
 
