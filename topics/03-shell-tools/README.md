@@ -143,6 +143,10 @@ features that make them more pleasant to use. For example, they can respect your
 version control system's "ignore" file to avoid generating extra, useless
 results.
 
+```
+ag "search term"
+```
+
 ## Find
 
 We've talked a lot about how to navigate the file system and work with files,
