@@ -155,6 +155,12 @@
       font-size: 0.8rem;
       padding: 1.0rem;
   }
+
+  figcaption {
+      font-size: 0.9rem;
+      font-style: italic;
+      text-align: center;
+  }
   </style>
 </head>
 <body>
@@ -305,5 +311,24 @@ find . -name &#39;*.txt&#39; -exec sh -c &quot;../random_numbers.py 10 24 &gt; {
 time find . -name &#39;*.txt&#39; -exec ../is_prime.py {} \;
 time parallel ../is_prime.py ::: *.txt</code></pre>
 <p>You should see that <code>parallel</code> is quite a bit faster now that our work is CPU bound. On my machine, <code>find</code> takes about 35 seconds and <code>parallel</code> takes about 8 seconds.</p>
+<p>Parallel can also run jobs on remote computers. We’ll take a quick look at that using the example above, but with a few more files to make it worthwhile given that everything is going to have to move over the network, taking up additional “wall clock” time.</p>
+<p>A couple things to note. We use <code>--transfer</code> to tell Parallel that we want to move the files to be processed to the remote machine before running. The <code>--cleanup</code> option, correspondingly, tells it to delete those files after it is finished. The <code>-j10</code> options tells Parallel to run 10 jobs at the same time, this requires using SSH to log into the remote system 10 times.</p>
+<p>You won’t be able to run this examples as-is since you don’t have access to the remote machine or my SSH configuration. Later in the semester we’re going to talk about using SSH and we will create remote servers using a service called AWS. At that point, we can revisit this example.</p>
+<pre><code># First, we need to copy over the program we&#39;re going to run
+scp ../is_prime.py bioinfo:~/
+
+# Now we can run it!
+time parallel -j10 -S bioinfo --transfer --cleanup ./is_prime.py ::: *.txt</code></pre>
+<p>Notice that the output produced by <code>time</code> is a little less useful since we don’t particularly care how much CPU time was used, only the “wall clock” time matters at this point.</p>
+<h3 id="monitor-cpu-usage">Monitor CPU Usage</h3>
+<p>We can use the <code>htop</code> tool (which can be installed through Homebrew or your Linux package manager) to monitor CPU usage while we run a parallel task. We could also use the <code>top</code> tool, which is included in virtually all Unix-like operating systems, but <code>htop</code> is way cooler.</p>
+<p>Note that you have to run <code>htop</code> using <code>sudo htop</code> on a Mac (this runs it as the “root” user). On Linux just <code>htop</code> will suffice.</p>
+<p>In one terminal window, start up <code>htop</code>. It will look something like the image below. Note that you can press “Q” to quit.</p>
+<figure>
+<img src="media/htop.png" alt="Running htop" /><figcaption aria-hidden="true">Running htop</figcaption>
+</figure>
+<p>Then, in another terminal window, run one of the commands below and watch what happens in your <code>htop</code> window. When you run the first one, you’ll notice that one of your CPUs (which one may change over time) goes up to about 100% usage. For the second command, you’ll see several of them pegged around 100%. That’s because Parallel is running multiple jobs at the same time.</p>
+<pre><code>time find . -name &#39;*.txt&#39; -exec ../is_prime.py {} \;
+time parallel ../is_prime.py ::: *.txt</code></pre>
 </body>
 </html>
