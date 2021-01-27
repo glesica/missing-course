@@ -16,10 +16,11 @@ Take a look at the list of [topics](../topics/) if you need inspiration.
 ## Project Scope
 
 Your project should be decidedly non-trivial. The expectation is that it should
-take around 40 hours of effort on your part.
+take around 40 hours of focussed effort on your part.
 
-For example, a research student might decide to add a test suite to their
-application which would likely include all of the following:
+For example, a graduate student who has developed a software package for a
+research project might decide to add a test suite to their package; this would
+likely include all of the following:
 
   - Unit tests using an appropriate library
   - Functional tests using shell scripts
@@ -34,6 +35,7 @@ course.
 ## Proposal
 
 Email the instructor with an outline of your proposal. You will then meet with
-the instructor to get feedback and approval. You may begin this process at any
-point during the semester.
+the instructor to ensure that your proposed project has the right scope, and is
+appropriate for the course; you may need to submit a revised proposal after this
+meeting. You may begin this process at any point during the semester.
 
