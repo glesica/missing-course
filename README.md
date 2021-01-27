@@ -52,6 +52,7 @@ recording). These are on a best-effort basis, so some may be missing.
   - [January 20](https://youtu.be/3-bpAPSkmiE) - shell scripting and beginning tools
   - [January 22](https://youtu.be/0t4VOTBayGs) - more shell tools
   - [January 25](https://youtu.be/gexRwnxlu54) - even more shell tools
+  - [January 27](https://youtu.be/H-IgXXoaXzY) - find and parallel
 
 There is also a playlist with all lecture videos:
 <https://youtube.com/playlist?list=PLq7UdDyGlli64bM1rewiDHtxxWMfk-ytu>.
