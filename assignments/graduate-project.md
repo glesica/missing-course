@@ -13,6 +13,24 @@ more out of both (and they will be less work for you).
 
 Take a look at the list of [topics](../topics/) if you need inspiration.
 
+## Project Scope
+
+Your project should be decidedly non-trivial. The expectation is that it should
+take around 40 hours of effort on your part.
+
+For example, a research student might decide to add a test suite to their
+application which would likely include all of the following:
+
+  - Unit tests using an appropriate library
+  - Functional tests using shell scripts
+  - Test isolation using Docker container
+  - Performance regression tests using an appropriate tool
+  - Continuous integration to ensure tests are run
+
+The above represent a significant body of work that would benefit the student's
+project and call upon a broad cross section of the topics covered in this
+course.
+
 ## Proposal
 
 Email the instructor with an outline of your proposal. You will then meet with
