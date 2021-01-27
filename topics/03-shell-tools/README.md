@@ -242,3 +242,57 @@ You should see that `parallel` is quite a bit faster now that our work is CPU
 bound. On my machine, `find` takes about 35 seconds and `parallel` takes about 8
 seconds.
 
+Parallel can also run jobs on remote computers. We'll take a quick look at that
+using the example above, but with a few more files to make it worthwhile given
+that everything is going to have to move over the network, taking up additional
+"wall clock" time.
+
+A couple things to note. We use `--transfer` to tell Parallel that we want to
+move the files to be processed to the remote machine before running. The
+`--cleanup` option, correspondingly, tells it to delete those files after it is
+finished. The `-j10` options tells Parallel to run 10 jobs at the same time,
+this requires using SSH to log into the remote system 10 times.
+
+You won't be able to run this examples as-is since you don't have access to the
+remote machine or my SSH configuration. Later in the semester we're going to
+talk about using SSH and we will create remote servers using a service called
+AWS. At that point, we can revisit this example.
+
+```
+# First, we need to copy over the program we're going to run
+scp ../is_prime.py bioinfo:~/
+
+# Now we can run it!
+time parallel -j10 -S bioinfo --transfer --cleanup ./is_prime.py ::: *.txt
+```
+
+Notice that the output produced by `time` is a little less useful since we don't
+particularly care how much CPU time was used, only the "wall clock" time matters
+at this point.
+
+### Monitor CPU Usage
+
+We can use the `htop` tool (which can be installed through Homebrew or your
+Linux package manager) to monitor CPU usage while we run a parallel task. We
+could also use the `top` tool, which is included in virtually all Unix-like
+operating systems, but `htop` is way cooler.
+
+Note that you have to run `htop` using `sudo htop` on a Mac (this runs it as the
+"root" user). On Linux just `htop` will suffice.
+
+In one terminal window, start up `htop`. It will look something like the image
+below. Note that you can press "Q" to quit.
+
+![Running htop](media/htop.png)
+
+Then, in another terminal window, run one of the commands below and watch what
+happens in your `htop` window. When you run the first one, you'll notice that
+one of your CPUs (which one may change over time) goes up to about 100% usage.
+For the second command, you'll see several of them pegged around 100%. That's
+because Parallel is running multiple jobs at the same time.
+
+```
+time find . -name '*.txt' -exec ../is_prime.py {} \;
+time parallel ../is_prime.py ::: *.txt
+```
+
