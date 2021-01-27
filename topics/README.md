@@ -7,7 +7,7 @@ directory contains resources and assignments for each.
   2. [Shell Scripting](02-shell-scripting/)
   3. [Shell Tools](03-shell-tools/)
   4. [Editors](04-editors/)
-  5. Data Wrangling
+  5. [Data Wrangling](05-data-wrangling)
   6. Job Control
   7. Remote Computing
   8. Version Control
