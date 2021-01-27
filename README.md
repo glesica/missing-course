@@ -92,6 +92,11 @@ study during this course. See the link below for instructions.
 Assignments will be evaluated automatically or by the instructor and grades will
 be posted on the course's Moodle page for confidentiality.
 
+## Disabilities
+
+If you have a documented disability and would like to discuss an affordance,
+please let me know as soon as possible.
+
 ## Instructor
 
 [George Lesica](https://lesica.com) is a Senior Software Scientist in the
