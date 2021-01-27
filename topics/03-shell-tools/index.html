@@ -330,5 +330,8 @@ time parallel -j10 -S bioinfo --transfer --cleanup ./is_prime.py ::: *.txt</code
 <p>Then, in another terminal window, run one of the commands below and watch what happens in your <code>htop</code> window. When you run the first one, you’ll notice that one of your CPUs (which one may change over time) goes up to about 100% usage. For the second command, you’ll see several of them pegged around 100%. That’s because Parallel is running multiple jobs at the same time.</p>
 <pre><code>time find . -name &#39;*.txt&#39; -exec ../is_prime.py {} \;
 time parallel ../is_prime.py ::: *.txt</code></pre>
+<div id="after">
+    <a href="#">Back to top</a>
+</div>
 </body>
 </html>
