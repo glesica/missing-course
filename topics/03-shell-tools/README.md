@@ -242,6 +242,8 @@ You should see that `parallel` is quite a bit faster now that our work is CPU
 bound. On my machine, `find` takes about 35 seconds and `parallel` takes about 8
 seconds.
 
+### Using a Remote Machine
+
 Parallel can also run jobs on remote computers. We'll take a quick look at that
 using the example above, but with a few more files to make it worthwhile given
 that everything is going to have to move over the network, taking up additional

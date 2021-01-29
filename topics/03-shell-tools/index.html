@@ -311,6 +311,7 @@ find . -name &#39;*.txt&#39; -exec sh -c &quot;../random_numbers.py 10 24 &gt; {
 time find . -name &#39;*.txt&#39; -exec ../is_prime.py {} \;
 time parallel ../is_prime.py ::: *.txt</code></pre>
 <p>You should see that <code>parallel</code> is quite a bit faster now that our work is CPU bound. On my machine, <code>find</code> takes about 35 seconds and <code>parallel</code> takes about 8 seconds.</p>
+<h3 id="using-a-remote-machine">Using a Remote Machine</h3>
 <p>Parallel can also run jobs on remote computers. We’ll take a quick look at that using the example above, but with a few more files to make it worthwhile given that everything is going to have to move over the network, taking up additional “wall clock” time.</p>
 <p>A couple things to note. We use <code>--transfer</code> to tell Parallel that we want to move the files to be processed to the remote machine before running. The <code>--cleanup</code> option, correspondingly, tells it to delete those files after it is finished. The <code>-j10</code> options tells Parallel to run 10 jobs at the same time, this requires using SSH to log into the remote system 10 times.</p>
 <p>You won’t be able to run this examples as-is since you don’t have access to the remote machine or my SSH configuration. Later in the semester we’re going to talk about using SSH and we will create remote servers using a service called AWS. At that point, we can revisit this example.</p>
