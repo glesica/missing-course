@@ -161,9 +161,28 @@
       font-style: italic;
       text-align: center;
   }
+
+  #before {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid black;
+  }
+
+  #after {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid black;
+  }
   </style>
 </head>
 <body>
+<div id="banner">
+    <img src="media/header.jpg" alt="Course Header">
+</div>
+<div id="before">
+    The Missing Course
+    <a href="..">Home</a>
+</div>
 <h1 id="topics">Topics</h1>
 <p>We expect to cover the following topics during the semester. The corresponding directory contains resources and assignments for each.</p>
 <ol type="1">
@@ -185,8 +204,10 @@
 <li>Cluster and Cloud Computing</li>
 <li>Security and cryptography</li>
 </ol>
+
 <div id="after">
     <a href="#">Back to top</a>
+    <a href="..">Home</a>
 </div>
 </body>
 </html>

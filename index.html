@@ -161,9 +161,28 @@
       font-style: italic;
       text-align: center;
   }
+
+  #before {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid black;
+  }
+
+  #after {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid black;
+  }
   </style>
 </head>
 <body>
+<div id="banner">
+    <img src="media/header.jpg" alt="Course Header">
+</div>
+<div id="before">
+    The Missing Course
+    <a href=".">Home</a>
+</div>
 <h1 id="the-missing-course">The Missing Course</h1>
 <p>A <a href="https://umt.edu">University of Montana</a> course covering helpful software development tools and techniques based on <a href="https://missing.csail.mit.edu">The Missing Semester</a>.</p>
 <h2 id="schedule">Schedule</h2>
@@ -221,8 +240,10 @@
 <li>Email: <a href="mailto:george.lesica@umontana.edu" class="email">george.lesica@umontana.edu</a></li>
 <li>Microsoft Teams: George Lesica</li>
 </ul>
+
 <div id="after">
     <a href="#">Back to top</a>
+    <a href=".">Home</a>
 </div>
 </body>
 </html>

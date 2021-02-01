@@ -285,7 +285,7 @@ Note that you have to run `htop` using `sudo htop` on a Mac (this runs it as the
 In one terminal window, start up `htop`. It will look something like the image
 below. Note that you can press "Q" to quit.
 
-![Running htop](media/htop.png)
+![Running htop](media/03-htop.png)
 
 Then, in another terminal window, run one of the commands below and watch what
 happens in your `htop` window. When you run the first one, you'll notice that

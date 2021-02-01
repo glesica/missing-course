@@ -161,14 +161,35 @@
       font-style: italic;
       text-align: center;
   }
+
+  #before {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid black;
+  }
+
+  #after {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid black;
+  }
   </style>
 </head>
 <body>
+<div id="banner">
+    <img src="media/header.jpg" alt="Course Header">
+</div>
+<div id="before">
+    The Missing Course
+    <a href="..">Home</a>
+</div>
 <h1 id="homework-0">Homework 0</h1>
 <p>Now that we’ve learned a little about the Unix shell, let’s use what we’ve learned. Download the <a href="homework-00.sh">template script</a> and add a command to produce the desired result for each of the tasks described. Once you’re finished, you can submit the script file through Moodle.</p>
 <p>There isn’t necessarily one correct answer, so feel free to use Google or man pages (remember <code>man &lt;command&gt;</code>).</p>
+
 <div id="after">
     <a href="#">Back to top</a>
+    <a href="..">Home</a>
 </div>
 </body>
 </html>

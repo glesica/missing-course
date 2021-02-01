@@ -161,9 +161,28 @@
       font-style: italic;
       text-align: center;
   }
+
+  #before {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid black;
+  }
+
+  #after {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid black;
+  }
   </style>
 </head>
 <body>
+<div id="banner">
+    <img src="media/header.jpg" alt="Course Header">
+</div>
+<div id="before">
+    The Missing Course
+    <a href="../..">Home</a>
+</div>
 <h1 id="shell-scripting">Shell Scripting</h1>
 <ul>
 <li><a href="https://missing.csail.mit.edu/2020/shell-tools/">MIT Page</a> (first half)</li>
@@ -226,8 +245,10 @@ cd data &amp;&amp; ../process_data.py
 
 # Print a custom error if a command fails
 ./process_data.py || echo &quot;failed to process data&quot;</code></pre>
+
 <div id="after">
     <a href="#">Back to top</a>
+    <a href="../..">Home</a>
 </div>
 </body>
 </html>

@@ -4,6 +4,16 @@
 
 ## Regular Expressions
 
+Regular Expressions let us create patterns that we can match against text. The
+simplest possible pattern is just an exact string match. For example, the
+pattern `hello` is found within the string "hello world" at position 0.
+
+More complicated patterns can express more interesting matches. For example, the
+pattern `[Hh]ello` will match "hello world" as well as "Hello world". We can
+also limit matches to the beginning or end of a line, this is sometimes called
+"anchoring" the regular expression. The pattern `^hello` will match "hello
+world" but not "say hello" because `^` indicates the beginning of the line.
+
 ## Sed
 
 ## Awk

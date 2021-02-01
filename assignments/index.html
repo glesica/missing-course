@@ -161,9 +161,28 @@
       font-style: italic;
       text-align: center;
   }
+
+  #before {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid black;
+  }
+
+  #after {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid black;
+  }
   </style>
 </head>
 <body>
+<div id="banner">
+    <img src="media/header.jpg" alt="Course Header">
+</div>
+<div id="before">
+    The Missing Course
+    <a href="..">Home</a>
+</div>
 <h1 id="assignments">Assignments</h1>
 <p>Assignments are listed below. Unless otherwise stated, they should be submitted via Moodle.</p>
 <ul>
@@ -173,8 +192,10 @@
 <ol type="1">
 <li><a href="homework-00.html">Homework 0</a> (due January 25)</li>
 </ol>
+
 <div id="after">
     <a href="#">Back to top</a>
+    <a href="..">Home</a>
 </div>
 </body>
 </html>

@@ -161,14 +161,35 @@
       font-style: italic;
       text-align: center;
   }
+
+  #before {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid black;
+  }
+
+  #after {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid black;
+  }
   </style>
 </head>
 <body>
+<div id="banner">
+    <img src="media/header.jpg" alt="Course Header">
+</div>
+<div id="before">
+    The Missing Course
+    <a href="../..">Home</a>
+</div>
 <h1 id="data-wrangling">Data Wrangling</h1>
 <ul>
 <li><a href="https://missing.csail.mit.edu/2020/data-wrangling/">MIT Page</a></li>
 </ul>
 <h2 id="regular-expressions">Regular Expressions</h2>
+<p>Regular Expressions let us create patterns that we can match against text. The simplest possible pattern is just an exact string match. For example, the pattern <code>hello</code> is found within the string “hello world” at position 0.</p>
+<p>More complicated patterns can express more interesting matches. For example, the pattern <code>[Hh]ello</code> will match “hello world” as well as “Hello world”. We can also limit matches to the beginning or end of a line, this is sometimes called “anchoring” the regular expression. The pattern <code>^hello</code> will match “hello world” but not “say hello” because <code>^</code> indicates the beginning of the line.</p>
 <h2 id="sed">Sed</h2>
 <h2 id="awk">Awk</h2>
 <h2 id="json-jq">JSON (jq)</h2>
@@ -183,8 +204,10 @@
 <ul>
 <li><a href="https://github.com/shenwei356/csvtk">GitHub</a></li>
 </ul>
+
 <div id="after">
     <a href="#">Back to top</a>
+    <a href="../..">Home</a>
 </div>
 </body>
 </html>

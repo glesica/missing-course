@@ -161,9 +161,28 @@
       font-style: italic;
       text-align: center;
   }
+
+  #before {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid black;
+  }
+
+  #after {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid black;
+  }
   </style>
 </head>
 <body>
+<div id="banner">
+    <img src="media/header.jpg" alt="Course Header">
+</div>
+<div id="before">
+    The Missing Course
+    <a href="../..">Home</a>
+</div>
 <h1 id="shell-overview">Shell Overview</h1>
 <ul>
 <li><a href="https://missing.csail.mit.edu/2020/course-shell/">MIT Page</a></li>
@@ -176,8 +195,10 @@
 </ul>
 <p>A text-based shell is one of the oldest means of interacting with a computer, and almost certainly the oldest still in common use. It is no surprise, then, that many students view the shell as an arcane, outdated contraption. It may come as a surprise, then, that this mode of operating a computer is common, and even growing more popular.</p>
 <p>In lecture, we’re going to talk about some of the shells that exist, why we might choose to use one or the other, and how they work in general terms. We will also work through the examples given on the <a href="https://missing.csail.mit.edu/2020/course-shell/">MIT page</a>.</p>
+
 <div id="after">
     <a href="#">Back to top</a>
+    <a href="../..">Home</a>
 </div>
 </body>
 </html>

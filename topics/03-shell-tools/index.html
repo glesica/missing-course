@@ -161,9 +161,28 @@
       font-style: italic;
       text-align: center;
   }
+
+  #before {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid black;
+  }
+
+  #after {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid black;
+  }
   </style>
 </head>
 <body>
+<div id="banner">
+    <img src="media/header.jpg" alt="Course Header">
+</div>
+<div id="before">
+    The Missing Course
+    <a href="../..">Home</a>
+</div>
 <h1 id="shell-tools">Shell Tools</h1>
 <ul>
 <li><a href="https://missing.csail.mit.edu/2020/shell-tools/">MIT Page</a> (second half)</li>
@@ -326,13 +345,15 @@ time parallel -j10 -S bioinfo --transfer --cleanup ./is_prime.py ::: *.txt</code
 <p>Note that you have to run <code>htop</code> using <code>sudo htop</code> on a Mac (this runs it as the “root” user). On Linux just <code>htop</code> will suffice.</p>
 <p>In one terminal window, start up <code>htop</code>. It will look something like the image below. Note that you can press “Q” to quit.</p>
 <figure>
-<img src="media/htop.png" alt="Running htop" /><figcaption aria-hidden="true">Running htop</figcaption>
+<img src="media/03-htop.png" alt="Running htop" /><figcaption aria-hidden="true">Running htop</figcaption>
 </figure>
 <p>Then, in another terminal window, run one of the commands below and watch what happens in your <code>htop</code> window. When you run the first one, you’ll notice that one of your CPUs (which one may change over time) goes up to about 100% usage. For the second command, you’ll see several of them pegged around 100%. That’s because Parallel is running multiple jobs at the same time.</p>
 <pre><code>time find . -name &#39;*.txt&#39; -exec ../is_prime.py {} \;
 time parallel ../is_prime.py ::: *.txt</code></pre>
+
 <div id="after">
     <a href="#">Back to top</a>
+    <a href="../..">Home</a>
 </div>
 </body>
 </html>

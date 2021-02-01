@@ -161,9 +161,28 @@
       font-style: italic;
       text-align: center;
   }
+
+  #before {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid black;
+  }
+
+  #after {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid black;
+  }
   </style>
 </head>
 <body>
+<div id="banner">
+    <img src="media/header.jpg" alt="Course Header">
+</div>
+<div id="before">
+    The Missing Course
+    <a href="../..">Home</a>
+</div>
 <h1 id="editors">Editors</h1>
 <p>We won’t spend too much time talking about editors because there are so many of them in existence and they represent such a subjective, personal choice on the part of individual users. However, it is good to be familiar with at least a couple of standard Unix editors since they are essentially ubiquitous and we don’t always have access to our preferred one in all circumstances.</p>
 <h2 id="nano">Nano</h2>
@@ -254,8 +273,10 @@
 </table>
 <h2 id="emacs">Emacs</h2>
 <p>A common joke about Emacs is that it is a great operating system that just lacks a text editor. There is some strange truth to this, and if you decide to drink enough of the Kool-Aid you’ll understand why.</p>
+
 <div id="after">
     <a href="#">Back to top</a>
+    <a href="../..">Home</a>
 </div>
 </body>
 </html>

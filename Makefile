@@ -11,7 +11,7 @@ OTHER_OUTPUTS := $(OTHER_INPUTS:.md=.html)
 INCLUDES := $(shell find includes -type f)
 
 SITE_TITLE := [missing course]
-PANDOC := pandoc -s -H includes/header.html -A includes/after.html
+PANDOC := pandoc -s --template includes/template.html -H includes/header.html
 
 .PHONY: build
 build: readmes others
@@ -30,13 +30,18 @@ serve:
 
 index.html: README.md ${INCLUDES}
 	@echo "building $<"
-	@${PANDOC} -M pagetitle:"/ ${SITE_TITLE}" -o "$@" "$<"
+	@${PANDOC} -V rooturl="." -M pagetitle:"/ ${SITE_TITLE}" -o "$@" "$<"
 
-%/index.html: %/README.md ${INCLUDES}
+%/index.html: %/README.md ${INCLUDES} %/media
 	@echo "building $<"
-	@${PANDOC} -M pagetitle:"/$(@D) ${SITE_TITLE}" -o "$@" "$<"
+	@${PANDOC} -V rooturl="$$(realpath --relative-to=$(@D) .)" -M pagetitle:"/$(@D) ${SITE_TITLE}" -o "$@" "$<"
 
 %.html: %.md ${INCLUDES}
 	@echo "building $<"
-	@${PANDOC} -M pagetitle:"/$(@D) ${SITE_TITLE}" -o "$@" "$<"
+	@${PANDOC} -V rooturl="$$(realpath --relative-to=$(@D) .)" -M pagetitle:"/$(@D) ${SITE_TITLE}" -o "$@" "$<"
+
+.PRECIOUS: %/media
+%/media: media
+	@echo "symlinking media $<"
+	@ln -s "$$(realpath --relative-to=$(@D) media)" "$@"
 
