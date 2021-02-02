@@ -207,8 +207,30 @@
 <p>Breaking this down, we pipe the contents of the file into Sed. Sed is invoked with the <code>-r</code> flag so that we can use regular expressions. Finally, we have a Sed command that looks for a certain pattern and replaces it with nothing (<code>//</code>), which is the same as removing it.</p>
 <p>What if we wanted to transform this file to CSV format and make the year, month, and day separate columns? That’s a little trickier, but really not so difficult (although we should keep in mind that if our messages have a lot of special characters the resulting CSV might be invalid).</p>
 <pre><code>cat messages.txt | sed -E &#39;s/^([0-9]{4})-([0-9]{2})-([0-9]{2}) (.+)$/\1,\2,\3,\4/&#39;</code></pre>
-<p>Wow, that’s a big one.</p>
+<p>Wow, that’s a big one. First, we capture four patterns (the parentheses), excluding the dashes and the space before the message. Then we copy what we captured, but this time we put commas between the pieces.</p>
+<p>Keep in mind that, by default, Sed only operates on the first instance of a pattern within a line. So the example below will print “goodbye hello”.</p>
+<pre><code>echo &quot;hello hello&quot; | sed &#39;s/hello/goodbye/&#39;</code></pre>
+<p>If we want to replace all occurrences of a pattern we need to use the <code>g</code> (for “global”) flag:</p>
+<pre><code>echo &quot;hello hello&quot; | sed &#39;s/hello/goodbye/g&#39;</code></pre>
+<p>We can also use the <code>-e</code> command line flag to run multiple Sed commands, one after the other. For example, what if we weren’t sure whether the messages in the earlier file themselves contained a comma (one of them does, in fact). This would obviously mess up the formatting of our CSV file. For example, the line</p>
+<pre><code>2021-01-03 this, is a message</code></pre>
+<p>would produce</p>
+<pre><code>2021,01,03,this, is a message</code></pre>
+<p>which a spreadsheet program might interpret as five columns instead of the four we intended.</p>
+<p>We could deal with this by first replacing commas with <code>\,</code> (to escape them) or even with nothing to remove them.</p>
+<pre><code>cat messages.txt | sed -E -e &#39;s/,//g&#39; -e &#39;s/^([0-9]{4})-([0-9]{2})-([0-9]{2}) (.+)$/\1,\2,\3,\4/&#39;</code></pre>
+<p>In this case, we can provide one Sed command for each <code>-e</code> and they will be run in the order they are specified. Note that we could also use another pipe and run Sed again to get the same behavior, though with a little more typing.</p>
+<h3 id="insert-and-append">Insert and append</h3>
+<p>Read up on the “insert” and “append” commands. These allow lines to be added above or below lines that match a particular pattern in a file.</p>
 <h2 id="awk">Awk</h2>
+<ul>
+<li><a href="https://www.grymoire.com/Unix/Awk.html">Tutorial</a></li>
+</ul>
+<p>Awk is one of those programs that only a few people know how to use properly and every time the rest of us witness what it can do we vow to learn how to use it. There’s a lot to learn about Awk, however, so it can be daunting. We’ll go over some basics, and if you find yourself inspired to be one of those wizards who really knows how to use it, you’ll be in good shape to continue learning.</p>
+<p>First, let’s make a CSV file from the output of <code>ls -l</code>:</p>
+<pre><code>ls -l ../../../ | awk &#39;/^[-d]/ {print $6&quot;,&quot;$7&quot;,&quot;$3&quot;,&quot;$9}&#39;</code></pre>
+<p>Awk has the concept of a “field separator”, which it uses to break lines into pieces automatically. This is handy since a lot of Unix-style program output ends up formatted at least somewhat like a table. The numerical variables above (<code>$6</code> and so on) refer to fields within a single row (line) of the implied table.</p>
+<p>The regular expression before the opening curly brace (<code>/^[-d]/</code>) just tells Awk to only run on lines that start with either a “-” character or a “d” character. This is so that we skip the initial line of output (“total 64” in my case).</p>
 <h2 id="json-jq">JSON (jq)</h2>
 <h2 id="csv-csvkit-and-csvtk">CSV (csvkit and csvtk)</h2>
 <p>Comma-separated values files are very common in data analysis. Think of them as very simple Excel spreadsheets that just hold data and don’t do any processing or calculations. This simplicity is one reason for the popularity of the format, since CSV files can be read easily on virtually any platform.</p>
