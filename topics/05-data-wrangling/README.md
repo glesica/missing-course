@@ -130,6 +130,20 @@ This is so that we skip the initial line of output ("total 64" in my case).
 
 ## JSON (jq)
 
+  - [jq web site](https://stedolan.github.io/jq/)
+
+JSON, or JavaScript Object Notation, is a data serialization format commonly
+used to communicate with web services. It is reasonably simple for both machines
+and humans to read and write, which makes it a nice compromise compared to more
+verbose formats like XML or more efficient ones like MessagePack.
+
+Most common programming languages have some level of support for JSON. Python
+includes a JSON package in its standard library. The jq tool allows us to query
+and manipulate JSON data from the command line.
+
+Take a look at [reddit.sh](reddit.sh) for an example. We'll go into more detail
+during class.
+
 ## CSV (csvkit and csvtk)
 
 Comma-separated values files are very common in data analysis. Think of them as
@@ -143,9 +157,9 @@ spreadsheet applications, even Excel!
 
 ### csvkit
 
-  - [GitHub](https://github.com/wireservice/csvkit)
+  - [csvkit on GitHub](https://github.com/wireservice/csvkit)
 
 ### csvtk
 
-  - [GitHub](https://github.com/shenwei356/csvtk)
+  - [csvtk on GitHub](https://github.com/shenwei356/csvtk)
 

@@ -232,16 +232,22 @@
 <p>Awk has the concept of a “field separator”, which it uses to break lines into pieces automatically. This is handy since a lot of Unix-style program output ends up formatted at least somewhat like a table. The numerical variables above (<code>$6</code> and so on) refer to fields within a single row (line) of the implied table.</p>
 <p>The regular expression before the opening curly brace (<code>/^[-d]/</code>) just tells Awk to only run on lines that start with either a “-” character or a “d” character. This is so that we skip the initial line of output (“total 64” in my case).</p>
 <h2 id="json-jq">JSON (jq)</h2>
+<ul>
+<li><a href="https://stedolan.github.io/jq/">jq web site</a></li>
+</ul>
+<p>JSON, or JavaScript Object Notation, is a data serialization format commonly used to communicate with web services. It is reasonably simple for both machines and humans to read and write, which makes it a nice compromise compared to more verbose formats like XML or more efficient ones like MessagePack.</p>
+<p>Most common programming languages have some level of support for JSON. Python includes a JSON package in its standard library. The jq tool allows us to query and manipulate JSON data from the command line.</p>
+<p>Take a look at <a href="reddit.sh">reddit.sh</a> for an example. We’ll go into more detail during class.</p>
 <h2 id="csv-csvkit-and-csvtk">CSV (csvkit and csvtk)</h2>
 <p>Comma-separated values files are very common in data analysis. Think of them as very simple Excel spreadsheets that just hold data and don’t do any processing or calculations. This simplicity is one reason for the popularity of the format, since CSV files can be read easily on virtually any platform.</p>
 <p>We will look at two different tools for working with CSV data on the command line, but keep in mind that CSV files can also be loaded into ordinary spreadsheet applications, even Excel!</p>
 <h3 id="csvkit">csvkit</h3>
 <ul>
-<li><a href="https://github.com/wireservice/csvkit">GitHub</a></li>
+<li><a href="https://github.com/wireservice/csvkit">csvkit on GitHub</a></li>
 </ul>
 <h3 id="csvtk">csvtk</h3>
 <ul>
-<li><a href="https://github.com/shenwei356/csvtk">GitHub</a></li>
+<li><a href="https://github.com/shenwei356/csvtk">csvtk on GitHub</a></li>
 </ul>
 
 <div id="after">
