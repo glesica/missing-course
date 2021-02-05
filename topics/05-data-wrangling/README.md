@@ -144,7 +144,7 @@ and manipulate JSON data from the command line.
 Take a look at [reddit.sh](reddit.sh) for an example. We'll go into more detail
 during class.
 
-## CSV (csvkit and csvtk)
+## CSV (csvkit)
 
 Comma-separated values files are very common in data analysis. Think of them as
 very simple Excel spreadsheets that just hold data and don't do any processing
@@ -244,4 +244,33 @@ csvcut -n kc_house_data.csv
 Now we can choose the columns we want to use and pull them into a separate file
 to make things easier to work with. Check out [simple_csv.sh](simple_csv.sh) to
 see how this is done.
+
+Now let's turn our attention to the tax data. The column names here are hard to
+interpret, so I'm gone ahead and picked out a couple for us to use. When we
+transform the CSV file we will also rename these columns.
+
+| Old Name | New Name           |
+| -------- | --------           |
+| a02650   | total_income       |
+| n02650   | total_income_count |
+| numdep   | dependent_count    |
+| zipcode  | zipcode            |
+
+Unfortunately, CSVKit doesn't have a fancy command to rename columns, but we can
+easily use a tool we already learned about: Sed! Check out the script to see one
+way of doing this.
+
+Finally, we're going to join these two datasets together. Why is this useful?
+Well, imagine we have a theory that, say, more expensive homes in certain
+markets tend to be owned by people who earn money through passive investments as
+opposed to participation in the labor market. This is a bit of a hot button
+issue right now as people in many desirable real estate markets have begun to
+feel "priced out". Providing evidence for a theory like this will almost always
+require data from more than one source, so being able to stitch CSV files
+together can be quite valuable.
+
+To do this, we use the `csvjoin` tool. We can specify the column to join on
+using the `-c` option, giving it either a single column name (`zipcode`) or a
+comma-delimited list of two names if the files use different names
+(`zipcode,zip_code`, for example).
 
