@@ -151,15 +151,97 @@ very simple Excel spreadsheets that just hold data and don't do any processing
 or calculations. This simplicity is one reason for the popularity of the format,
 since CSV files can be read easily on virtually any platform.
 
-We will look at two different tools for working with CSV data on the command
-line, but keep in mind that CSV files can also be loaded into ordinary
-spreadsheet applications, even Excel!
+### Project
+
+In order to make this more interesting, we will play around with some real CSV
+files. The first contains
+[house sale data](https://www.kaggle.com/harlfoxem/housesalesprediction)
+from King County, WA (which includes Seattle). This spreadsheet contains sale
+price, zip code, and some characteristics of each house sold during a
+particular time period. The second contains various
+[tax statistics](https://www.kaggle.com/irs/individual-income-tax-statistics?select=field_definitions.csv)
+and happens to also contain zip codes, which we will use later.
 
 ### csvkit
 
-  - [csvkit on GitHub](https://github.com/wireservice/csvkit)
+  - [GitHub Page](https://github.com/wireservice/csvkit)
 
-### csvtk
+CSVKit actually consists of several command line utilities, each with a specific
+purpose and its own set command line flags.
 
-  - [csvtk on GitHub](https://github.com/shenwei356/csvtk)
+The `csvstat` tool gives us summary statistics (average, and so on) for each
+column in the spreadsheet. This can be a handy place to start when working with
+unfamiliar data. It can also hint at errors in the data. Two examples are shown
+below.
+
+```
+csvstat kc_house_data.csv
+
+...
+
+  2. "date"
+
+        Type of data:          DateTime
+        Contains null values:  False
+        Unique values:         372
+        Smallest value:        2014-05-02 00:00:00
+        Largest value:         2015-05-27 00:00:00
+        Most common values:    2014-06-23 00:00:00 (142x)
+                               2014-06-26 00:00:00 (131x)
+                               2014-06-25 00:00:00 (131x)
+                               2014-07-08 00:00:00 (127x)
+                               2015-04-27 00:00:00 (126x)
+
+  3. "price"
+
+        Type of data:          Number
+        Contains null values:  False
+        Unique values:         4028
+        Smallest value:        75,000
+        Largest value:         7,700,000
+        Sum:                   11,672,925,008
+        Mean:                  540,088.142
+        Median:                450,000
+        StDev:                 367,127.196
+        Most common values:    450,000 (172x)
+                               350,000 (172x)
+                               550,000 (159x)
+                               500,000 (152x)
+                               425,000 (150x)
+
+...
+```
+
+The `csvcut` tool can extract and filter columns from a file. The first thing
+we'll do is run `csvcut -n` on one of our files to display the column headers
+(names).
+
+```
+csvcut -n kc_house_data.csv
+  1: id
+  2: date
+  3: price
+  4: bedrooms
+  5: bathrooms
+  6: sqft_living
+  7: sqft_lot
+  8: floors
+  9: waterfront
+ 10: view
+ 11: condition
+ 12: grade
+ 13: sqft_above
+ 14: sqft_basement
+ 15: yr_built
+ 16: yr_renovated
+ 17: zipcode
+ 18: lat
+ 19: long
+ 20: sqft_living15
+ 21: sqft_lot15
+ ```
+ 
+Now we can choose the columns we want to use and pull them into a separate file
+to make things easier to work with. Check out [simple_csv.sh](simple_csv.sh) to
+see how this is done.
 

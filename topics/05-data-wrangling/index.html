@@ -240,15 +240,73 @@
 <p>Take a look at <a href="reddit.sh">reddit.sh</a> for an example. We’ll go into more detail during class.</p>
 <h2 id="csv-csvkit-and-csvtk">CSV (csvkit and csvtk)</h2>
 <p>Comma-separated values files are very common in data analysis. Think of them as very simple Excel spreadsheets that just hold data and don’t do any processing or calculations. This simplicity is one reason for the popularity of the format, since CSV files can be read easily on virtually any platform.</p>
-<p>We will look at two different tools for working with CSV data on the command line, but keep in mind that CSV files can also be loaded into ordinary spreadsheet applications, even Excel!</p>
+<h3 id="project">Project</h3>
+<p>In order to make this more interesting, we will play around with some real CSV files. The first contains <a href="https://www.kaggle.com/harlfoxem/housesalesprediction">house sale data</a> from King County, WA (which includes Seattle). This spreadsheet contains sale price, zip code, and some characteristics of each house sold during a particular time period. The second contains various <a href="https://www.kaggle.com/irs/individual-income-tax-statistics?select=field_definitions.csv">tax statistics</a> and happens to also contain zip codes, which we will use later.</p>
 <h3 id="csvkit">csvkit</h3>
 <ul>
-<li><a href="https://github.com/wireservice/csvkit">csvkit on GitHub</a></li>
+<li><a href="https://github.com/wireservice/csvkit">GitHub Page</a></li>
 </ul>
-<h3 id="csvtk">csvtk</h3>
-<ul>
-<li><a href="https://github.com/shenwei356/csvtk">csvtk on GitHub</a></li>
-</ul>
+<p>CSVKit actually consists of several command line utilities, each with a specific purpose and its own set command line flags.</p>
+<p>The <code>csvstat</code> tool gives us summary statistics (average, and so on) for each column in the spreadsheet. This can be a handy place to start when working with unfamiliar data. It can also hint at errors in the data. Two examples are shown below.</p>
+<pre><code>csvstat kc_house_data.csv
+
+...
+
+  2. &quot;date&quot;
+
+        Type of data:          DateTime
+        Contains null values:  False
+        Unique values:         372
+        Smallest value:        2014-05-02 00:00:00
+        Largest value:         2015-05-27 00:00:00
+        Most common values:    2014-06-23 00:00:00 (142x)
+                               2014-06-26 00:00:00 (131x)
+                               2014-06-25 00:00:00 (131x)
+                               2014-07-08 00:00:00 (127x)
+                               2015-04-27 00:00:00 (126x)
+
+  3. &quot;price&quot;
+
+        Type of data:          Number
+        Contains null values:  False
+        Unique values:         4028
+        Smallest value:        75,000
+        Largest value:         7,700,000
+        Sum:                   11,672,925,008
+        Mean:                  540,088.142
+        Median:                450,000
+        StDev:                 367,127.196
+        Most common values:    450,000 (172x)
+                               350,000 (172x)
+                               550,000 (159x)
+                               500,000 (152x)
+                               425,000 (150x)
+
+...</code></pre>
+<p>The <code>csvcut</code> tool can extract and filter columns from a file. The first thing we’ll do is run <code>csvcut -n</code> on one of our files to display the column headers (names).</p>
+<pre><code>csvcut -n kc_house_data.csv
+  1: id
+  2: date
+  3: price
+  4: bedrooms
+  5: bathrooms
+  6: sqft_living
+  7: sqft_lot
+  8: floors
+  9: waterfront
+ 10: view
+ 11: condition
+ 12: grade
+ 13: sqft_above
+ 14: sqft_basement
+ 15: yr_built
+ 16: yr_renovated
+ 17: zipcode
+ 18: lat
+ 19: long
+ 20: sqft_living15
+ 21: sqft_lot15</code></pre>
+<p>Now we can choose the columns we want to use and pull them into a separate file to make things easier to work with. Check out <a href="simple_csv.sh">simple_csv.sh</a> to see how this is done.</p>
 
 <div id="after">
     <a href="#">Back to top</a>
