@@ -159,7 +159,7 @@ files. The first contains
 from King County, WA (which includes Seattle). This spreadsheet contains sale
 price, zip code, and some characteristics of each house sold during a
 particular time period. The second contains various
-[tax statistics](https://www.kaggle.com/irs/individual-income-tax-statistics?select=field_definitions.csv)
+[tax statistics](https://www.kaggle.com/irs/individual-income-tax-statistics)
 and happens to also contain zip codes, which we will use later.
 
 ### csvkit
