@@ -16,6 +16,11 @@ really don't want to fall behind. If you miss a week, be sure to catch up.
   1. [Shell Tools](topics/03-shell-tools/)
   1. [Editors](topics/04-editors/)
   1. [Data Wrangling](topics/05-data-wrangling/)
+  1. [Job Control](topics/06-job-control/)
+  1. [Remote Computing](topics/07-remote-computing/)
+  1. [Version Control](topics/08-version-control/)
+  1. [Debugging](topics/09-debugging/)
+  1. [CPU Profiling](topics/10-cpu-profiling/)
 
 ## Instruction
 
