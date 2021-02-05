@@ -7,12 +7,12 @@ directory contains resources and assignments for each.
   2. [Shell Scripting](02-shell-scripting/)
   3. [Shell Tools](03-shell-tools/)
   4. [Editors](04-editors/)
-  5. [Data Wrangling](05-data-wrangling)
-  6. Job Control
-  7. Remote Computing
-  8. Version Control
-  9. Debugging
-  10. CPU Profiling
+  5. [Data Wrangling](05-data-wrangling/)
+  6. [Job Control](06-job-control/)
+  7. [Remote Computing](07-remote-computing/)
+  8. [Version Control](08-version-control/)
+  9. [Debugging](09-debugging/)
+  10. [CPU Profiling](10-cpu-profiling/)
   11. Memory profiling
   12. Build Systems
   13. Versioning
