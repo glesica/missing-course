@@ -11,17 +11,6 @@ organized into topics and each topic will generally take about a week. Keep in
 mind, however, that many topics will build on one another. This means that you
 really don't want to fall behind. If you miss a week, be sure to catch up.
 
-  1. [Shell Overview](topics/01-shell-overview/)
-  1. [Shell Scripting](topics/02-shell-scripting/)
-  1. [Shell Tools](topics/03-shell-tools/)
-  1. [Editors](topics/04-editors/)
-  1. [Data Wrangling](topics/05-data-wrangling/)
-  1. [Job Control](topics/06-job-control/)
-  1. [Remote Computing](topics/07-remote-computing/)
-  1. [Version Control](topics/08-version-control/)
-  1. [Debugging](topics/09-debugging/)
-  1. [CPU Profiling](topics/10-cpu-profiling/)
-
 ## Instruction
 
 Lectures will be delivered electronically due to the COVID-19 pandemic. Office
