@@ -78,7 +78,7 @@ to use `tar` to compress the files beforehand.
 scp -r myfiles missing:/home/gl219598e/
 
 # Using tar
-tar -cf files.tar.gz myfiles/
+tar -cxf files.tar.gz myfiles/
 scp files.tar.gz missing:/home/gl219598e/
 ```
 
