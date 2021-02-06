@@ -59,3 +59,30 @@ This is the entry in my config file for the server we will use in class. Note
 that I've nicknamed it "missing", set the username, and pointed it at a key
 file. This allows me to connect using a simple command: `ssh missing`.
 
+## Copying Files (scp)
+
+It is possible to copy files to any remote SSH host using the `scp` program.
+Since SCP (secure copy) uses the same configuration file, it can be made very
+easy to use.
+
+```
+scp file.txt missing:/home/gl219598e/
+```
+
+There is also a `-r` flag that copies directories recursively, making it easy to
+copy a number of files. If you have a lot of data, however, it might be better
+to use `tar` to compress the files beforehand.
+
+```
+# Use scp directly
+scp -r myfiles missing:/home/gl219598e/
+
+# Using tar
+tar -cf files.tar.gz myfiles/
+scp files.tar.gz missing:/home/gl219598e/
+```
+
+## Tunneling
+
+
+

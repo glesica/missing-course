@@ -213,6 +213,17 @@
     User gl219598e
     IdentityFile ~/.ssh/id_rsa_missing</code></pre>
 <p>This is the entry in my config file for the server we will use in class. Note that I’ve nicknamed it “missing”, set the username, and pointed it at a key file. This allows me to connect using a simple command: <code>ssh missing</code>.</p>
+<h2 id="copying-files-scp">Copying Files (scp)</h2>
+<p>It is possible to copy files to any remote SSH host using the <code>scp</code> program. Since SCP (secure copy) uses the same configuration file, it can be made very easy to use.</p>
+<pre><code>scp file.txt missing:/home/gl219598e/</code></pre>
+<p>There is also a <code>-r</code> flag that copies directories recursively, making it easy to copy a number of files. If you have a lot of data, however, it might be better to use <code>tar</code> to compress the files beforehand.</p>
+<pre><code># Use scp directly
+scp -r myfiles missing:/home/gl219598e/
+
+# Using tar
+tar -cf files.tar.gz myfiles/
+scp files.tar.gz missing:/home/gl219598e/</code></pre>
+<h2 id="tunneling">Tunneling</h2>
 
 <div id="after">
     <a href="#">Back to top</a>
