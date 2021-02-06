@@ -84,5 +84,11 @@ scp files.tar.gz missing:/home/gl219598e/
 
 ## Tunneling
 
+It is possible to route your computer's network traffic through another machine
+using SSH. This can be helpful if you need to access services running on the
+remote machine but not exposed to the Internet. It can also allow you to use the
+remote machine as a kind of "poor man's" VPN (I used this technique to watch
+Hulu when I lived in Chile).
 
+The MIT page has an example and some nice diagrams.
 
