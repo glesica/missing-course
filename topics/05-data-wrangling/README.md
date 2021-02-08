@@ -274,3 +274,23 @@ using the `-c` option, giving it either a single column name (`zipcode`) or a
 comma-delimited list of two names if the files use different names
 (`zipcode,zip_code`, for example).
 
+## Producer / Consumer Pattern
+
+We've used a lot of pipes (`|`) so far, but aside from the fact that they work
+by sending the output of one command into the next command as its input, we
+don't know much about them. So let's think about a particular software
+development pattern and use it to experiment a little with how pipes actually
+work.
+
+It is very common to have a program that produces data, perhaps directly or
+perhaps in response to some kind of user or external (like a sensor) input. This
+sort of program is known as a "producer". It is also common to have a program
+that accepts data and processes it in some way. If we plug a producer into a
+program like this then we call it a "consumer" because it consumes the data
+produced by the producer. Producers and consumers can be independent programs or
+they can be logical parts of a single program, like functions or classes.
+
+We'll use the [produce.py](produce.py) and [consume.py](consume.py) scripts and
+run them as a pipeline as an example. This will also give us a chance to see how
+pipes work.
+
