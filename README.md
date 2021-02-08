@@ -50,6 +50,7 @@ recording). These are on a best-effort basis, so some may be missing.
   - [February 1](https://youtu.be/65nZOwn4q2I) - basic Vim
   - [Febryary 3](https://youtu.be/b8qXOYMFcHc) - intro to Sed
   - [February 5](https://youtu.be/fgNte-CvP_U) - intro to Awk
+  - [February 8](https://youtu.be/wbu93dcWxN8) - JSON and CSV
 
 There is also a playlist with all lecture videos:
 <https://youtube.com/playlist?list=PLq7UdDyGlli64bM1rewiDHtxxWMfk-ytu>.
