@@ -197,6 +197,22 @@
     </div>
 </div>
 <h1 id="debugging">Debugging</h1>
+<p>Debugging is a big topic. There are many debugging strategies and tools and we will only cover a couple of them here.</p>
+<h2 id="print">Print</h2>
+<p>The simplest debugging strategy, and probably the first one we all used, is to simply print one or more values and see if they are what you expected them to be.</p>
+<pre><code>def my_algorithm(a):
+    # print(f&quot;a = {a}&quot;)
+    b = step1(a)
+    # print(f&quot;b = {b}&quot;)
+    c = step2(a, b)
+    # print(f&quot;c = {c}&quot;)
+    d, e = step3(a, c)
+    # print(f&quot;d = {d}, e = {e}&quot;)
+    f = step4(a, d, e)
+    # print(f&quot;f = {f}&quot;)
+    return f</code></pre>
+<h2 id="debugger">Debugger</h2>
+<p>A debugger is a program that “wraps” your program and allows you to do things like pause execution and inspect your program’s internal state. Debuggers exist for many programming environments, we will look at an example using a C++ codebase.</p>
 
 <div id="after">
     <a href="#">Back to top</a>
