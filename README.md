@@ -52,6 +52,7 @@ recording). These are on a best-effort basis, so some may be missing.
   - [February 5](https://youtu.be/fgNte-CvP_U) - intro to Awk
   - [February 8](https://youtu.be/wbu93dcWxN8) - JSON and CSV
   - [February 10](https://youtu.be/xoSf75l75ps) - job control
+  - [February 12](https://youtu.be/_hN-_HtfbxA) - remote computing
 
 There is also a playlist with all lecture videos:
 <https://youtube.com/playlist?list=PLq7UdDyGlli64bM1rewiDHtxxWMfk-ytu>.
