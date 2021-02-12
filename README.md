@@ -14,13 +14,13 @@ really don't want to fall behind. If you miss a week, be sure to catch up.
 ## Instruction
 
 Lectures will be delivered electronically due to the COVID-19 pandemic. Office
-hours will be held virtually in an on-demand fashion. Email the instructor to
-schedule an appointment. The instructor is also available on Microsoft Teams
-(see below).
+hours will be held virtually in an on-demand fashion. Please use
+[Calendly](https://calendly.com/glesica) to schedule an office hours
+appointment. I am also available on Microsoft Teams (see below).
 
 If you need help with an assignment, it is generally a good idea to include
-whatever code or data you are working with when you email the instructor. You
-can do this using the `tar` command.
+whatever code or data you are working with when you email me. You can do this
+using the `tar` command.
 
 To create a zip file that includes all the files in a particular directory, use
 the following (in this case, the directory you want to zip is called "the_dir"):
