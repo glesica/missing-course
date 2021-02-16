@@ -84,6 +84,8 @@ scp files.tar.gz missing:/home/gl219598e/
 
 ## Tunneling
 
+  - [SSH tunneling tutorial](https://robotmoon.com/ssh-tunnels/)
+
 It is possible to route your computer's network traffic through another machine
 using SSH. This can be helpful if you need to access services running on the
 remote machine but not exposed to the Internet. It can also allow you to use the
@@ -91,4 +93,16 @@ remote machine as a kind of "poor man's" VPN (I used this technique to watch
 Hulu when I lived in Chile).
 
 The MIT page has an example and some nice diagrams.
+
+## Tmux
+
+  - [A brief Tmux tutorial](https://danielmiessler.com/study/tmux/)
+
+A terminal multiplexer allows multiple shell sessions to be run and, more
+importantly for us, saved and restored. This capability is useful for running a
+persistent application on a remote server such that you can return to it later
+as though you'd only gotten up from the computer rather than logged out of it.
+
+Tmux and Screen are the most popular terminal multiplexers. Install Tmux using
+Homebrew or your Linux distro's package manager.
 
