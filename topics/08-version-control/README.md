@@ -33,3 +33,17 @@ version control, for example). A very popular system today is
 project. We will learn the basics of Git, the MIT page has a good tutorial and
 there are countless alternative tutorials online.
 
+In class, we're going to take a look at some standard workflows as well as some
+less common tasks.
+
+  - Create a repository
+  - Add files
+  - Make a commit
+  - Modify files
+  - Undo changes to files
+  - Create a branch
+  - Merge a branch
+  - Resolve a merge conflict
+  - Add a remote
+  - Push to a remote
+
