@@ -9,7 +9,7 @@ The simplest debugging strategy, and probably the first one we all used, is to
 simply print one or more values and see if they are what you expected them to
 be.
 
-```
+```python
 def my_algorithm(a):
     # print(f"a = {a}")
     b = step1(a)
