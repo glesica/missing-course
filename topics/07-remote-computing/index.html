@@ -239,6 +239,20 @@ scp files.tar.gz missing:/home/gl219598e/</code></pre>
 </ul>
 <p>A terminal multiplexer allows multiple shell sessions to be run and, more importantly for us, saved and restored. This capability is useful for running a persistent application on a remote server such that you can return to it later as though you’d only gotten up from the computer rather than logged out of it.</p>
 <p>Tmux and Screen are the most popular terminal multiplexers. Install Tmux using Homebrew or your Linux distro’s package manager.</p>
+<h3 id="leave-a-program-running">Leave a Program Running</h3>
+<p>What if you want to leave a program running on a server? This could be a long-lived computation, or a program that serves requests. We can do this with <code>nohup</code>, which causes a program to effectively ignore the “hangup” signal it receives when we close the SSH session.</p>
+<pre><code>nohup ./longjob.py George</code></pre>
+<p>We can also put this into the background either by appending <code>&amp;</code> to the command or using our job control tools. Once we disconnect, the job remains. Note that stdout and stderr are automatically redirected to a file. This makes sense since we expect to “abandon” the program as it runs, but, presumably, we still want its output.</p>
+<p>Once we log back in, however, we can’t bring the application back to the foreground, it doesn’t even show up in our <code>jobs</code> listing.</p>
+<h3 id="using-tmux">Using Tmux</h3>
+<p>We can accomplish something similar, but more conveniently, using Tmux. First, we start a Tmux session:</p>
+<pre><code>tmux new -s longjob</code></pre>
+<p>We can simply run <code>tmux</code> to get a new, anonymous, session too. Now we can run our program normally:</p>
+<pre><code>./longjob.py George</code></pre>
+<p>We could redirect the output or put the job in the background as well. But once we’re ready to log out we can “detach” from our terminal session with <code>Ctrl-b d</code> or by running <code>tmux detach</code>. Note that the program output stops printing, we’re no longer inside the shell session that has <code>longjob.py</code> running, so we don’t get its output.</p>
+<p>Now we can disconnect from the server and come back later. If we run <code>tmux ls</code> we’ll see the <code>longjob</code> session listed. We can “attach” to it:</p>
+<pre><code>tmux attach -t longjob</code></pre>
+<p>We could also use <code>tmux attach</code> or <code>tmux a</code> since there is only one session. Now the old session is restored, and we can even see all the output that has occurred since we left!</p>
 
 <div id="after">
     <a href="#">Back to top</a>

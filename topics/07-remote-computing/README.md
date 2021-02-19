@@ -106,3 +106,56 @@ as though you'd only gotten up from the computer rather than logged out of it.
 Tmux and Screen are the most popular terminal multiplexers. Install Tmux using
 Homebrew or your Linux distro's package manager.
 
+### Leave a Program Running
+
+What if you want to leave a program running on a server? This could be a
+long-lived computation, or a program that serves requests. We can do this with
+`nohup`, which causes a program to effectively ignore the "hangup" signal it
+receives when we close the SSH session.
+
+```
+nohup ./longjob.py George
+```
+
+We can also put this into the background either by appending `&` to the command
+or using our job control tools. Once we disconnect, the job remains. Note that
+stdout and stderr are automatically redirected to a file. This makes sense since
+we expect to "abandon" the program as it runs, but, presumably, we still want
+its output.
+
+Once we log back in, however, we can't bring the application back to the
+foreground, it doesn't even show up in our `jobs` listing.
+
+### Using Tmux
+
+We can accomplish something similar, but more conveniently, using Tmux. First,
+we start a Tmux session:
+
+```
+tmux new -s longjob
+```
+
+We can simply run `tmux` to get a new, anonymous, session too. Now we can run
+our program normally:
+
+```
+./longjob.py George
+```
+
+We could redirect the output or put the job in the background as well. But once
+we're ready to log out we can "detach" from our terminal session with `Ctrl-b d`
+or by running `tmux detach`. Note that the program output stops printing, we're
+no longer inside the shell session that has `longjob.py` running, so we don't
+get its output.
+
+Now we can disconnect from the server and come back later. If we run `tmux ls`
+we'll see the `longjob` session listed. We can "attach" to it:
+
+```
+tmux attach -t longjob
+```
+
+We could also use `tmux attach` or `tmux a` since there is only one session.
+Now the old session is restored, and we can even see all the output that has
+occurred since we left!
+
