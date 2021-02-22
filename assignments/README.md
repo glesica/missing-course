@@ -7,6 +7,8 @@ via Moodle.
 
 ## Homework
 
-  1. [Homework 0](homework-00.html) (due January 25)
-  2. [Homework 1](homework-01.html) (due February 8)
+  1. [Homework 0](homework-00.html)
+  2. [Homework 1](homework-01.html)
+  3. [Homework 2](homework-02.html)
+  4. [Homework 3](homework-03.html)
 

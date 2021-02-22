@@ -1,5 +1,7 @@
 # Homework 1
 
+See Moodle for the due date.
+
 Let's wrangle some data with Sed! We're going to do something fun, modifying a
 small Python program, just to demonstrate some of the power this tool brings to
 the table.
