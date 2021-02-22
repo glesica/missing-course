@@ -61,6 +61,8 @@ There is also a playlist with all lecture videos:
 
 ## Assignments
 
+[Student Guestbook](assignments/guestbook.html)
+
 Students will submit each assignment by creating a "pull request" (PR) against
 this GitHub repository. Don't worry, we'll learn what that means before anything
 is due. This pattern will simulate a standard software development workflow.
