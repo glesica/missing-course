@@ -41,6 +41,7 @@ less common tasks.
   - Make a commit
   - Modify files
   - Undo changes to files
+  - The stash
   - Create a branch
   - Merge a branch
   - Resolve a merge conflict
