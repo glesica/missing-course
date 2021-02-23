@@ -15,7 +15,7 @@ directory contains resources and assignments for each.
   10. [CPU Profiling](10-cpu-profiling/)
   11. Memory profiling
   12. Build Systems
-  13. Versioning
+  13. [Versioning](13-versioning/)
   14. [Automated Testing](14-automated-testing/)
   15. Continuous Integration
   16. Cluster and Cloud Computing
