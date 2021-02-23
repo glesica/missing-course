@@ -1,5 +1,7 @@
 # CPU Profiling
 
+  - [MIT Page](https://missing.csail.mit.edu/2020/debugging-profiling/)
+
 CPU profiling is the practice of measuring how much "work" the computer is doing
 when it runs your code, and which parts of your code require the most work. In
 most cases, we measure "work" using the amount of time something takes, but this

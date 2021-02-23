@@ -1,5 +1,7 @@
 # Debugging
 
+  - [MIT Page](https://missing.csail.mit.edu/2020/debugging-profiling/)
+
 Debugging is a big topic. There are many debugging strategies and tools and we
 will only cover a couple of them here.
 
