@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>/topics/14-automated-testing [missing course]</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <style>
+  pre code {
+      background-color: lightgoldenrodyellow;
+      border-radius: 1.0rem;
+      display: block;
+      font-size: 0.8rem;
+      padding: 1.0rem;
+  }
+
+  pre code.sourceCode {
+      background-color: lightgoldenrodyellow;
+  }
+
+  code {
+      background-color: lightgoldenrodyellow;
+      border-radius: 0.3rem;
+      padding: 0.1rem 0.2rem;
+  }
+
+  figcaption {
+      font-size: 0.9rem;
+      font-style: italic;
+      text-align: center;
+  }
+
+  #before {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid black;
+  }
+
+  #after {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid black;
+  }
+  </style>
+</head>
+<body>
+<div id="banner">
+    <img src="media/header.jpg" alt="Course Header">
+</div>
+<div id="before">
+    The Missing Course
+    <div id="before-links">
+        <a href="../.." title="Course Home">Home</a> |
+        <a href="https://github.com/glesica/missing-course" title="Course GitHub Page">GitHub</a>
+    </div>
+</div>
+<h1 id="automated-testing">Automated Testing</h1>
+<p>Everyone who has ever learned to program has also learned to test software. When you wrote your first “Hello, world!” you tested it. You compiled it, ran it, and verified that it printed the famous phrase. But when programs get large, as they tend to do, we need additional tools and practices to ensure that they do what we want them to do.</p>
+<p>This is where automated testing comes in.</p>
+<h2 id="assertions">Assertions</h2>
+<p>Testing is essentially the process of verifying that, for a given set of inputs, your program produces the correct outputs. Sometimes we have a get a little fuzzy with our definition of “correct”, but at the end of the day that’s pretty much it.</p>
+<p>In order to verify a correct output we make an assertion about it. For example, to test a function that adds two numbers together, we might <em>assert</em> that for the inputs <code>2</code> and <code>3</code>, the output is <code>5</code>. When an assertion is violated, then we have a test failure.</p>
+<p>I said earlier that “correct” can end up being a fuzzy concept. As an example, let’s say we have a program that, when run, simulates rolling one or more dice, with two or more “sides” each.</p>
+<pre><code>./rolldice 2 6</code></pre>
+<p>The command above, then, would roll two dice, each with six sides. We can’t verify the correctness of this program by asserting exactly which numbers will print out when it is run, because they’re random. So how do we define “correct”?</p>
+<p>We have a couple options:</p>
+<ol type="1">
+<li>Verify that two outputs are produced</li>
+<li>Assert that each output is between one and the number of sides</li>
+<li>Verify that, on rolling the dice 1,000 times, we get each value between one and the number of sides at least once</li>
+<li>Statistically verify that, on rolling the dice 1,000 times, we get each value between one and the number of sides <code>1/N</code> times where <code>N</code> is the number of sides</li>
+<li>Verify that the program completes successfully (doesn’t crash or print an error message) for many values of each of the parameters</li>
+<li>Perform a parameter sweep on both the number of dice and number of sides and verify that the program completes successfully for each combination</li>
+</ol>
+<p>There are probably others as well. But how do we choose? Well, it depends on what we’re trying to accomplish with our tests, how long we are willing to wait for the tests to complete, and how much effort we wish to put into writing and maintaining the tests themselves.</p>
+<p>Testing is a bit of an art.</p>
+<h2 id="test-cases">Test Cases</h2>
+<p>Let’s say you’ve got a program you want to test and you’ve decided what it means for a particular set of outputs to be “correct” given a particular set of inputs. How do you know which inputs to use in your tests?</p>
+<p>This can be, again, a bit of an art, but there are some general guidelines we can use.</p>
+<p>Always attempt to test boundary values. A boundary value is one that occurs on or near a boundary between two parts of a value’s domain. For example, <code>-1</code>, <code>0</code>, and <code>1</code> are boundary values for signed integers. The reason for this is that negative and positive integers often behave differently under common mathematical operators, and zero behaves differently from either of them. For example, say you have the expression <code>r = q / n</code> in your code:</p>
+<ul>
+<li>if <code>n</code> is zero, then your program might crash</li>
+<li>if <code>n</code> is positive, then <code>r</code> will have the same sign as <code>q</code></li>
+<li>if <code>n</code> is negative, then <code>r</code> will have the opposite sign as <code>q</code></li>
+<li>if <code>q</code> is zero then <code>r</code> will be zero and we need to worry about using it as a denominator elsewhere</li>
+</ul>
+<p>So, in choosing values to test, we probably want to make sure <code>n</code> takes on negative, positive, and zero values, and that <code>q</code> ends up being zero at some point.</p>
+<p>Another piece of advice is to always test the absence of data, if it can possibly occur. This often means testing what happens when a variable is <code>null</code> or <code>nil</code> (or whatever a given language calls it). With strings and collections (like lists), this usually means testing the “empty” version of these data structures.</p>
+<p>Finally, testing extreme values can be handy for various reasons. For example, if you define a function that accepts a signed 32 bit integer, test a value (one that makes sense given your algorithm) that is close to the minimum and maximum representable values for this type, around +/- 2 billion. Note, however, that this could also be seen as a special kind of boundary value since values larger than <code>2^32-1</code> “roll over” and become negative.</p>
+<h2 id="functional-testing">Functional Testing</h2>
+<p>Functional testing attempts to test the functionality, or behavior of a piece of software. This is what we all did when we run our first programs and verified that they’d printed “Hello, world!”.</p>
+<h2 id="unit-testing">Unit Testing</h2>
+<p>Unit testing attempts to verify the whole by verifying the individual parts. A “unit” in this case is a smaller piece of a program, such as a function or class. The advantage here is that the tests are often easier to write since a single function is usually a lot simpler than an entire program.</p>
+
+<div id="after">
+    <a href="#">Back to top</a>
+    <div id="after-links">
+        <a href="../.." title="Course Home">Home</a> |
+        <a href="https://github.com/glesica/missing-course" title="Course GitHub Page">GitHub</a>
+    </div>
+</div>
+</body>
+</html>

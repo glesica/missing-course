@@ -16,7 +16,7 @@ directory contains resources and assignments for each.
   11. Memory profiling
   12. Build Systems
   13. Versioning
-  14. Automated Testing
+  14. [Automated Testing](14-automated-testing/)
   15. Continuous Integration
   16. Cluster and Cloud Computing
   17. Security and cryptography
