@@ -1,5 +1,8 @@
 # Versioning
 
+  - [MIT Page](https://missing.csail.mit.edu/2020/metaprogramming/) (Dependency
+    Management)
+
 Programs that we use every day usually have simple, if sometimes silly, version
 numbers like Chrome 88, or PyCharm 2020.3, or Ubuntu 20.10. They sometimes
 express the year and month of release, but ultimately they simply mark the
