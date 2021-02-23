@@ -98,10 +98,47 @@ Functional testing attempts to test the functionality, or behavior of a piece of
 software. This is what we all did when we run our first programs and verified
 that they'd printed "Hello, world!".
 
+At a basic level, functional testing ensures that users get what they expect out
+of our software. If a program won't even run, for example, then it isn't useful
+to anyone.
+
+Automated functional tests can be tedious to set up, particular for graphical
+applications where we must somehow simulate a mouse and keyboard. There are many
+tools available that make this process easier, however. For web-based
+applications, [Selenium](https://www.selenium.dev) and
+[Puppeteer](https://pptr.dev) provide interfaces for automating popular web
+browsers. We will take a look at Selenium in class.
+
 ## Unit Testing
 
 Unit testing attempts to verify the whole by verifying the individual parts. A
 "unit" in this case is a smaller piece of a program, such as a function or
 class. The advantage here is that the tests are often easier to write since a
 single function is usually a lot simpler than an entire program.
+
+Consider the following function, along with its doctests (which are a style of
+writing unit tests popularized by Python but adopted by other languages as
+well):
+
+```python
+def pad_left(s: str, n: int):
+    """
+    Pad s on the left to have at least length n.
+    
+    >>> pad_left("a", 2)
+    ' a'
+    >>> pad_left("aaa", 2)
+    'aaa'
+    """
+    pass
+```
+
+The tests verify that the function works, but say nothing about a larger program
+that might be built with this function.
+
+Unit tests are also widely used in re-usable code libraries to ensure the
+correctness of the algorithms within the library without the need for a "driver"
+program. This also means that developers using a particular library can
+generally assume that the library's code is correct, reducing their own testing
+burden.
 
