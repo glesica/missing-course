@@ -90,7 +90,7 @@ if you define a function that accepts a signed 32 bit integer, test a value
 (one that makes sense given your algorithm) that is close to the minimum and
 maximum representable values for this type, around +/- 2 billion. Note, however,
 that this could also be seen as a special kind of boundary value since values
-larger than `2^32-1` "roll over" and become negative.
+larger than $2^32-1$ "roll over" and become negative.
 
 ## Functional Testing
 
