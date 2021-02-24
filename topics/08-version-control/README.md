@@ -45,6 +45,9 @@ less common tasks.
   - Create a branch
   - Merge a branch
   - Resolve a merge conflict
+  - Create a repository (GitHub)
   - Add a remote
   - Push to a remote
+  - Create a fork (GitHub)
+  - Create a pull request (GitHub)
 
