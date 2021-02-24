@@ -56,6 +56,7 @@ recording). These are on a best-effort basis, so some may be missing.
   - [February 17](https://youtu.be/bbhhs7apzsI) - remote computing continued
   - [February 19](https://youtu.be/WyUkmCcc0QA) - intro to Tmux
   - [February 22](https://youtu.be/ueBUvZvjOU8) - intro to Git
+  - [February 24](https://youtu.be/1IRXQv4Mnt8) - branches and merges
 
 There is also a playlist with all lecture videos:
 <https://youtube.com/playlist?list=PLq7UdDyGlli64bM1rewiDHtxxWMfk-ytu>.
