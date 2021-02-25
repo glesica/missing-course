@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>/topics/12-build-systems [missing course]</title>
+  <title>/topics/12-build-systems/example-go [missing course]</title>
   <style>
     html {
       line-height: 1.5;
@@ -192,38 +192,17 @@
 <div id="before">
     The Missing Course
     <div id="before-links">
-        <a href="../.." title="Course Home">Home</a> |
+        <a href="../../.." title="Course Home">Home</a> |
         <a href="https://github.com/glesica/missing-course" title="Course GitHub Page">GitHub</a>
     </div>
 </div>
-<h1 id="build-systems">Build Systems</h1>
-<ul>
-<li><a href="https://missing.csail.mit.edu/2020/metaprogramming/">MIT Page</a> (Build Systems)</li>
-</ul>
-<p>When programs are small, particularly when they fit in a single file, it is perfectly acceptable to simply invoke the compiler or interpreter directly. However, as programs grow in size it is helpful to add a bit more structure.</p>
-<h2 id="make">Make</h2>
-<ul>
-<li><a href="https://www.gnu.org/software/make/">GNU Make</a></li>
-<li><a href="https://makefiletutorial.com">An unofficial tutorial</a></li>
-<li><a href="https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html">Automatic variables</a></li>
-</ul>
-<p>Make is a tool for building files based on the contents of other files. At its core, this is pretty much what we do as programmers, so Make is a pretty useful tool for us!</p>
-<p>Make is based on the concept of targets and prerequisites. A target is something that can be built, and prerequisites are the building blocks out of which the target may be constructed. Take a look in the <a href="example-make/">example-make/</a> directory for a Makefile that resizes images. We will go over this file in class.</p>
-<h2 id="go-toolchain">Go Toolchain</h2>
-<ul>
-<li><a href="http://golang.org">Go programming language</a></li>
-</ul>
-<p>It is becoming common for modern programming languages to ship a build system alongside the compiler / interpreter. A good example of this is the Go programming language, which includes an efficient build system.</p>
-<p>Take a look at <a href="example-go/">example-go</a> for a tiny Go project and some instructions for building it.</p>
-<h2 id="case-studies">Case Studies</h2>
-<p>We will take a look at a couple of real-world examples in class. They are briefly described below.</p>
-<h3 id="webpage">Webpage</h3>
-<p>For a nice example of a Makefile, let’s take a look at <a href="https://github.com/glesica/webpage" class="uri">https://github.com/glesica/webpage</a>. This is a minimalist system for creating a static web site. It relies on a Makefile to build a collection of Markdown documents into a functioning web site. We will look at the Makefile during lecture.</p>
+<h1 id="example---go">Example - Go</h1>
+<p>Build the project with <code>go build</code>. This will create a file called <code>example</code> that you can run. Run <code>go clean</code> to delete the build cache and built assets (like the executable).</p>
 
 <div id="after">
     <a href="#">Back to top</a>
     <div id="after-links">
-        <a href="../.." title="Course Home">Home</a> |
+        <a href="../../.." title="Course Home">Home</a> |
         <a href="https://github.com/glesica/missing-course" title="Course GitHub Page">GitHub</a>
     </div>
 </div>
