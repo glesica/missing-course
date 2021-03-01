@@ -29,6 +29,6 @@ def my_algorithm(a):
 
 A debugger is a program that "wraps" your program and allows you to do things
 like pause execution and inspect your program's internal state. Debuggers exist
-for many programming environments, we will look at an example using a C++
-codebase.
+for many programming environments, but we will look at examples using C++ and
+Python codebases.
 
