@@ -22,6 +22,7 @@ recording). These are on a best-effort basis, so some may be missing.
   - [February 24](https://youtu.be/1IRXQv4Mnt8) - branches and merges
   - [February 26](https://youtu.be/vJp6tBugUAg) - remotes and pull requests
   - [March 1](https://youtu.be/uoyXK61L8wA) - debugging
+  - [March 3](https://youtu.be/fMICuSRGM_E) - CPU profiling
 
 There is also a playlist with all lecture videos:
 <https://youtube.com/playlist?list=PLq7UdDyGlli64bM1rewiDHtxxWMfk-ytu>.
