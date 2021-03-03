@@ -6,7 +6,7 @@ a (school appropriate) picture, quote, or other message. Be creative!
 
 
 here is some asci art I found online: 
-
+```
 Art by Rowan Crawford
                ________
           _,.-Y  |  |  Y-._
@@ -29,3 +29,4 @@ Art by Rowan Crawford
         `=}--{='     `=}--{='
        .-^--r-^-.   .-^--r-^-.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
