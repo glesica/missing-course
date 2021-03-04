@@ -17,7 +17,7 @@ directory contains resources and assignments for each.
   12. [Build Systems](12-build-systems/)
   13. [Versioning](13-versioning/)
   14. [Automated Testing](14-automated-testing/)
-  15. Continuous Integration
+  15. [Continuous Integration](15-continuous-integration)
   16. Cluster and Cloud Computing
   17. Security and cryptography
 
