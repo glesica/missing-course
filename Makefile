@@ -16,6 +16,14 @@ PANDOC := pandoc -s --template includes/template.html -H includes/header.html
 .PHONY: build
 build: readmes others
 
+.PHONY: build-container
+build-container:
+	@docker run --mount src="${PWD}",target=/code,type=bind glesica/missing-course
+
+.PHONY: container
+container:
+	@docker build -t glesica/missing-course:latest .
+
 .PHONY: readmes
 readmes: ${README_OUTPUTS}
 
