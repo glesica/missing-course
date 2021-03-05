@@ -23,6 +23,7 @@ recording). These are on a best-effort basis, so some may be missing.
   - [February 26](https://youtu.be/vJp6tBugUAg) - remotes and pull requests
   - [March 1](https://youtu.be/uoyXK61L8wA) - debugging
   - [March 3](https://youtu.be/fMICuSRGM_E) - CPU profiling
+  - [March 5](https://youtu.be/52KflOy3p6A) - memory profiling
 
 There is also a playlist with all lecture videos:
 <https://youtube.com/playlist?list=PLq7UdDyGlli64bM1rewiDHtxxWMfk-ytu>.
