@@ -24,6 +24,7 @@ recording). These are on a best-effort basis, so some may be missing.
   - [March 1](https://youtu.be/uoyXK61L8wA) - debugging
   - [March 3](https://youtu.be/fMICuSRGM_E) - CPU profiling
   - [March 5](https://youtu.be/52KflOy3p6A) - memory profiling
+  - [March 8](https://youtu.be/RUQBFlA4rro) - build systems and Make
 
 There is also a playlist with all lecture videos:
 <https://youtube.com/playlist?list=PLq7UdDyGlli64bM1rewiDHtxxWMfk-ytu>.
