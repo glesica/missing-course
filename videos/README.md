@@ -26,6 +26,7 @@ recording). These are on a best-effort basis, so some may be missing.
   - [March 5](https://youtu.be/52KflOy3p6A) - memory profiling
   - [March 8](https://youtu.be/RUQBFlA4rro) - build systems and Make
   - [March 10](https://youtu.be/TCBwqVaY9_Y) - more build systems and Go
+  - [March 12](https://youtu.be/ZuE8uhJIH6o) - semantic versioning
 
 There is also a playlist with all lecture videos:
 <https://youtube.com/playlist?list=PLq7UdDyGlli64bM1rewiDHtxxWMfk-ytu>.
