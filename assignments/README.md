@@ -13,4 +13,5 @@ via Moodle.
   1. [Homework 3](homework-03.html)
   1. [Homework 4](homework-04.html)
   1. [Homework 5](homework-05.html)
+  1. [Homework 6](homework-06.html)
 
