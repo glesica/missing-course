@@ -29,6 +29,7 @@ recording). These are on a best-effort basis, so some may be missing.
   - [March 12](https://youtu.be/ZuE8uhJIH6o) - semantic versioning
   - [March 15](https://youtu.be/Jya0P5S4GkQ) - assertions and test cases
   - [March 17](https://youtu.be/FdNiPixeKC4) - functional and unit testing
+  - [March 19](https://youtu.be/84AqEdb0tBI) - testing examples
 
 There is also a playlist with all lecture videos:
 <https://youtube.com/playlist?list=PLq7UdDyGlli64bM1rewiDHtxxWMfk-ytu>.
