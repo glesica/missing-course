@@ -31,6 +31,7 @@ recording). These are on a best-effort basis, so some may be missing.
   - [March 17](https://youtu.be/FdNiPixeKC4) - functional and unit testing
   - [March 19](https://youtu.be/84AqEdb0tBI) - testing examples
   - [March 22](https://youtu.be/dttS5y80Jts) - writing unit tests
+  - [March 24](https://youtu.be/Pw82Q6bu5YA) - notes on Homework 7
 
 There is also a playlist with all lecture videos:
 <https://youtube.com/playlist?list=PLq7UdDyGlli64bM1rewiDHtxxWMfk-ytu>.
