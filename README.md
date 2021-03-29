@@ -13,10 +13,12 @@ really don't want to fall behind. If you miss a week, be sure to catch up.
 
 ## Instruction
 
-Lectures will be delivered electronically due to the COVID-19 pandemic. Office
-hours will be held virtually in an on-demand fashion. Please use
-[Calendly](https://calendly.com/glesica) to schedule an office hours
-appointment. I am also available on Microsoft Teams (see below).
+Lectures will be delivered electronically due to the COVID-19 pandemic. See
+Moodle for the Zoom link.
+
+[Office hours](office-hours.html) will be held virtually in an on-demand
+fashion. Please use [Calendly](https://calendly.com/glesica) to schedule an
+office hours appointment.
 
 If you need help with an assignment, it is generally a good idea to include
 whatever code or data you are working with when you email me. You can do this
