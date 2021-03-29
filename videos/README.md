@@ -33,6 +33,7 @@ recording). These are on a best-effort basis, so some may be missing.
   - [March 22](https://youtu.be/dttS5y80Jts) - writing unit tests
   - [March 24](https://youtu.be/Pw82Q6bu5YA) - notes on Homework 7
   - [March 26](https://youtu.be/sutR8US88oM) - continuous integration
+  - [March 29](https://youtu.be/WQoWvEAClEo) - Linux containers
 
 There is also a playlist with all lecture videos:
 <https://youtube.com/playlist?list=PLq7UdDyGlli64bM1rewiDHtxxWMfk-ytu>.
