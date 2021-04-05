@@ -3,6 +3,7 @@
   - [Linux Containers](https://www.redhat.com/en/topics/containers/whats-a-linux-container)
   - [Docker](https://www.docker.com)
   - [Podman](https://podman.io)
+  - [Dockerfile Reference](https://docs.docker.com/engine/reference/builder/)
 
 Containers are all the rage lately, and perhaps for good reason. A container is
 similar to a virtual machine in that it provides an isolated environment in
