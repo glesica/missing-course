@@ -15,4 +15,5 @@ via Moodle.
   1. [Homework 5](homework-05.html)
   1. [Homework 6](homework-06.html)
   1. [Homework 7](homework-07.html)
+  1. [Homework 8](homework-08.html)
 
