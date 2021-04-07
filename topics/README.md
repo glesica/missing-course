@@ -18,7 +18,7 @@ directory contains resources and assignments for each.
   13. [Versioning](13-versioning/)
   14. [Automated Testing](14-automated-testing/)
   15. [Continuous Integration](15-continuous-integration/)
-  16. [Containers](18-containers/)
-  17. Cluster and Cloud Computing
-  18. Security and cryptography
+  16. [Containers](16-containers/)
+  17. [Security and cryptography](17-security/)
+  18. [Cluster and Cloud Computing](18-cluster-computing/)
 
