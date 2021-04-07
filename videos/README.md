@@ -35,6 +35,7 @@ recording). These are on a best-effort basis, so some may be missing.
   - [March 26](https://youtu.be/sutR8US88oM) - continuous integration
   - [March 29](https://youtu.be/WQoWvEAClEo) - Linux containers
   - [April 5](https://youtu.be/VnzsJmxgRm8) - Docker example
+  - [April 7](https://youtu.be/ZoFu1uQ1PK0) - password security
 
 There is also a playlist with all lecture videos:
 <https://youtube.com/playlist?list=PLq7UdDyGlli64bM1rewiDHtxxWMfk-ytu>.
