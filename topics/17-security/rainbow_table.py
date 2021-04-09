@@ -9,7 +9,7 @@ from hashlib import sha256
 from sys import argv
 
 if len(argv) > 1:
-    MAX_LENGTH = argv[1]
+    MAX_LENGTH = int(argv[1])
 else:
     MAX_LENGTH = 4
 
@@ -34,7 +34,7 @@ def passwords(chars, length, prefix = ""):
             yield pw + SALT
 
 def hash_password(password):
-    salted_password = password + salt
+    salted_password = password + SALT
     return sha256(salted_password.encode()).hexdigest()
 
 for pw in passwords(CHARS, MAX_LENGTH):
