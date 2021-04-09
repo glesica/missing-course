@@ -202,6 +202,8 @@
 <p>We will take a quick look at two related practices that facilitate the modern computing landscape: cluster computing, and cloud computing.</p>
 <h2 id="cluster-computing">Cluster Computing</h2>
 <p>A cluster is, put simply, a collection of computers that operate cooperatively in some way or another. Clusters are common in scientific applications where they are used to solve very large mathematical problems that would simply take too long to complete on an ordinary workstation. But they are also used in industry to run database systems, game servers, and web applications.</p>
+<p>For applications that must keep track of some state, such as direct messages between users, the use of clusters has motivated a great deal of work in a field called “distributed systems”. For example, if a messaging application server is run on two computers at once (two “nodes”), then it is important that a new message be recorded on both of them, regardless of which one initially received the message from the user’s device. It is also important that the message be recorded only once (you may have noticed unintended duplicates in certain apps).</p>
+<p>As it turns out, this is a ferociously difficult problem to solve. Theoretically, there are a number of good, though sub-optimal, algorithms such as <a href="https://en.wikipedia.org/wiki/Paxos_%28computer_science%29">Paxos</a>, but “distributed consensus”, as this problem is called, remains difficult in practice.</p>
 <h3 id="examples">Examples</h3>
 <p>We will take a tour of one particular application of a high performance computing cluster and see a cluster in action, including how tasks are configured and how output is collected upon completion.</p>
 <h2 id="cloud-computing">Cloud Computing</h2>
