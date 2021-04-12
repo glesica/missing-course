@@ -20,6 +20,8 @@ they are used to solve very large mathematical problems that would simply
 take too long to complete on an ordinary workstation. But they are also used in
 industry to run database systems, game servers, and web applications.
 
+![Scientific Cluster Topology](media/18-scientific-topology.png)
+
 For applications that must keep track of some state, such as direct messages
 between users, the use of clusters has motivated a great deal of work in a field
 called "distributed systems". For example, if a messaging application server is
@@ -27,6 +29,8 @@ run on two computers at once (two "nodes"), then it is important that a new
 message be recorded on both of them, regardless of which one initially received
 the message from the user's device. It is also important that the message be
 recorded only once (you may have noticed unintended duplicates in certain apps).
+
+![Application Cluster Topology](media/18-application-topology.png)
 
 As it turns out, this is a ferociously difficult problem to solve.
 Theoretically, there are a number of good, though sub-optimal, algorithms such
