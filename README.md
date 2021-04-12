@@ -4,6 +4,13 @@ A [University of Montana](https://umt.edu) course covering helpful software
 development tools and techniques based on [The Missing
 Semester](https://missing.csail.mit.edu).
 
+## Shortcuts
+
+  * [Assignments](assignments/)
+  * [Lecture videos](videos/)
+  * [Office hours](office-hours.html)
+  * [Topics](topics/)
+
 ## Schedule
 
 The [topics/](topics/) directory contains the materials we will cover. It is
