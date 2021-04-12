@@ -41,6 +41,8 @@ def dumb_hash(pw: str) -> str:
     return digest
 ```
 
+You can also download the code: [dumb_hash.py](dumb_hash.py).
+
 Analyze the code above and find two passwords that will hash to the same value
 (collide). Submit both of them, along with their hash value. You don't need to
 submit anything else.
