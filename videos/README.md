@@ -38,6 +38,7 @@ recording). These are on a best-effort basis, so some may be missing.
   - [April 7](https://youtu.be/ZoFu1uQ1PK0) - password security
   - [April 9](https://youtu.be/FtY7A4IVxVQ) - SQL injection
   - [April 12](https://youtu.be/ZOkORiqfD-s) - Buffer overruns
+  - [April 14](https://youtu.be/nm4BnvBgtk0) - cluster and cloud computing
 
 There is also a playlist with all lecture videos:
 <https://youtube.com/playlist?list=PLq7UdDyGlli64bM1rewiDHtxxWMfk-ytu>.
