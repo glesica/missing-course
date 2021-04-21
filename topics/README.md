@@ -22,3 +22,9 @@ directory contains resources and assignments for each.
   17. [Security and cryptography](17-security/)
   18. [Cluster and Cloud Computing](18-cluster-computing/)
 
+## Experimental Topics
+
+These may be added to the course in the future.
+
+  1. [Concurrency and Parallelism](xx-concurrency/)
+

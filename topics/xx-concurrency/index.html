@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>/topics [missing course]</title>
+  <title>/topics/xx-concurrency [missing course]</title>
   <style>
     html {
       line-height: 1.5;
@@ -192,42 +192,31 @@
 <div id="before">
     The Missing Course
     <div id="before-links">
-        <a href=".." title="Course Home">Home</a> |
+        <a href="../.." title="Course Home">Home</a> |
         <a href="https://github.com/glesica/missing-course" title="Course GitHub Page">GitHub</a>
     </div>
 </div>
-<h1 id="topics">Topics</h1>
-<p>We expect to cover the following topics during the semester. The corresponding directory contains resources and assignments for each.</p>
-<ol type="1">
-<li><a href="01-shell-overview/">Shell Overview</a></li>
-<li><a href="02-shell-scripting/">Shell Scripting</a></li>
-<li><a href="03-shell-tools/">Shell Tools</a></li>
-<li><a href="04-editors/">Editors</a></li>
-<li><a href="05-data-wrangling/">Data Wrangling</a></li>
-<li><a href="06-job-control/">Job Control</a></li>
-<li><a href="07-remote-computing/">Remote Computing</a></li>
-<li><a href="08-version-control/">Version Control</a></li>
-<li><a href="09-debugging/">Debugging</a></li>
-<li><a href="10-cpu-profiling/">CPU Profiling</a></li>
-<li><a href="11-memory-profiling/">Memory profiling</a></li>
-<li><a href="12-build-systems/">Build Systems</a></li>
-<li><a href="13-versioning/">Versioning</a></li>
-<li><a href="14-automated-testing/">Automated Testing</a></li>
-<li><a href="15-continuous-integration/">Continuous Integration</a></li>
-<li><a href="16-containers/">Containers</a></li>
-<li><a href="17-security/">Security and cryptography</a></li>
-<li><a href="18-cluster-computing/">Cluster and Cloud Computing</a></li>
-</ol>
-<h2 id="experimental-topics">Experimental Topics</h2>
-<p>These may be added to the course in the future.</p>
-<ol type="1">
-<li><a href="xx-concurrency/">Concurrency and Parallelism</a></li>
-</ol>
+<h1 id="concurrency-and-parallelism">Concurrency and Parallelism</h1>
+<p>Concurrency is, conceptually, the pursuit of multiple goals or tasks at one time. You can think of this like multi-tasking (the metaphor is actually pretty accurate, which helps explain why people don’t multi-task very well). Concurrency does not, however, necessarily mean that more than one goal or task can advance at the same moment in time.</p>
+<p>When multiple things happen at the same moment in time, then we have parallelism. The difference here can be subtle, but it is vitally important. For example, let’s say we have two computations, <code>A</code> and <code>B</code> that take 10s and 20s, respectively, to run on a given computer. If we run them concurrently, but not in parallel, then they will take 30s to finish. However, if we run them concurrently and in parallel, they will take 20s to finish.</p>
+<h2 id="concurrency">Concurrency</h2>
+<p>If concurrency does not imply parallelism, then why does it matter? There are several potential benefits to concurrency, even in the absence of parallelism, depending on the properties of the system in question. Most of these benefits fall into one (or both) of two categories: responsiveness and intermediate results.</p>
+<h3 id="responsiveness">Responsiveness</h3>
+<p>When two (or more) processes run concurrently they can take turns making progress. One can pause while the other runs, and then they can swap. This implies that we can assign higher or lower priority to different processes at different times. This is particularly valuable for user interfaces, where we want the buttons and scroll bars and such to remain responsive, even though other things may be happening as well.</p>
+<p>To achieve this, we prioritize the process that accepts and handles user input so that when there is UI work to be done, it is done right away. In fact, early GUI systems didn’t do this and, as a result, gained a reputation for being frustrating to use.</p>
+<h3 id="intermediate-results">Intermediate Results</h3>
+<p>Often, our computations don’t have just a single output. They often produce many results (such as an array of values) or they may be able to issue status updates as they run (like updating a progress bar).</p>
+<p>Concurrency gives us the opportunity to make partial progress on more than one task and, in some cases, allows tasks to cooperate or be terminated early if this is desired.</p>
+<p>For example, we might have two processes, one that fetches data from a network service and another that calculates some statistics on the data and writes the results to a file. In this case, without concurrency, the first process would have to finish its entire download (which could be quite large) before any further processing could occur. So if the fetch process takes 30s (total) and the statistics process takes 12s (total) we would have to wait 42s before we saw any results at all. On the other hand, if we can allow the fetch to run partially, perhaps for 5s at a time, followed by the statistics process, which would take about 2s at a time since we’re talking about 1/6 of the total data, we could see partial results after only 7s.</p>
+<h2 id="parallelism">Parallelism</h2>
+<p>Ultimately, once you understand the idea behind concurrency, parallelism is fairly straightforward since it is just concurrency where multiple tasks can be run simultaneously. That is not to suggest that it is always easy to take advantage of parallelism, of course, which can be quite tricky to get right.</p>
+<h2 id="example">Example</h2>
+<p>See <a href="workers.py">workers.py</a> for an example of concurrency / parallelism using Python. This is a convenient language to use since it is very easy to switch between only concurrency and concurrency with parallelism.</p>
 
 <div id="after">
     <a href="#">Back to top</a>
     <div id="after-links">
-        <a href=".." title="Course Home">Home</a> |
+        <a href="../.." title="Course Home">Home</a> |
         <a href="https://github.com/glesica/missing-course" title="Course GitHub Page">GitHub</a>
     </div>
 </div>
