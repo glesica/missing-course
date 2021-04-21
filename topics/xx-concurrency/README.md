@@ -49,12 +49,14 @@ For example, we might have two processes, one that fetches data from a network
 service and another that calculates some statistics on the data and writes the
 results to a file. In this case, without concurrency, the first process would
 have to finish its entire download (which could be quite large) before any
-further processing could occur. So if the fetch process takes 30s (total) and
-the statistics process takes 12s (total) we would have to wait 42s before we saw
-any results at all. On the other hand, if we can allow the fetch to run
-partially, perhaps for 5s at a time, followed by the statistics process, which
-would take about 2s at a time since we're talking about 1/6 of the total data,
-we could see partial results after only 7s.
+further processing could occur.
+
+So if the fetch process takes 30s (total) and the statistics process takes 12s
+(total) we would have to wait 42s before we saw any results at all. On the other
+hand, if we can allow the fetch to run partially, perhaps for 5s at a time,
+followed by the statistics process, which would take about 2s at a time since
+we're talking about 1/6 of the total data, we could see partial results after
+only 7s.
 
 ## Parallelism
 
