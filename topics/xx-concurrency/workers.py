@@ -31,6 +31,9 @@ def work(name: str, multiplier: int):
 
 
 def _main():
+    print(f"using {CONCURRENCY_CLASS.__name__}")
+    print("")
+
     # Create some tasks that we will execute concurrently, and perhaps in
     # parallel if we use the Process class instead of the Thread class (see
     # below for an explanation).
@@ -67,6 +70,7 @@ def _main():
     # although the increase in performance will be sub-linear because of the
     # overhead required to start up several new instances of the Python
     # interpreter.
+    print("")
     print(f"total time: {te - ts:.3f}s")
 
 
