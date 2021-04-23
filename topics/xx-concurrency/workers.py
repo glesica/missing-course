@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
 
-# TODO: Add no-op concurrency class that runs everything in serial
-
 from multiprocessing import Process
 from threading import Thread
 from time import sleep, time
