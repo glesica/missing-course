@@ -1,15 +1,34 @@
 #!/usr/bin/env python3
 
+# TODO: Add no-op concurrency class that runs everything in serial
+
 from multiprocessing import Process
 from threading import Thread
 from time import sleep, time
 
+
+# This is a version of the Thread / Process API that runs the tasks given to it
+# in serial, in other words with no concurrency at all, to illustrate the
+# difference between serial and concurrent execution. Note that the order in
+# which the tasks finish will be different using Serial.
+class Serial:
+    def __init__(self, target, args):
+        self.target = target
+        self.args = args
+
+    def start(self):
+        pass
+
+    def join(self):
+        self.target(*self.args)
+
+
 # This is just so that we can use smaller numbers later.
 BASE_N = 10000
 
-# This is the class we will use to provide concurrency. Either Thread or
+# This is the class we will use to provide concurrency. Either Serial, Thread or
 # Process.
-CONCURRENCY_CLASS = Thread
+CONCURRENCY_CLASS = Serial
 
 
 # The function that will run concurrently. It does some nonsense work just to
