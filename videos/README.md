@@ -41,6 +41,7 @@ recording). These are on a best-effort basis, so some may be missing.
   - [April 14](https://youtu.be/nm4BnvBgtk0) - cluster and cloud computing
   - [April 19](https://youtu.be/ze6jP2Fzsw8) - Lamport clocks
   - [April 21](https://youtu.be/2CTww3MUmYU) - type systems
+  - [April 23](https://youtu.be/t2BqnZ4xomw) - concurrency
 
 There is also a playlist with all lecture videos:
 <https://youtube.com/playlist?list=PLq7UdDyGlli64bM1rewiDHtxxWMfk-ytu>.
