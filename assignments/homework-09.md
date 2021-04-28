@@ -51,3 +51,17 @@ You may need to look up what the `hex` and `ord` functions do, in particular.
 You should also probably place the code in a script so that you can run it to
 check your work.
 
+## Example Solution
+
+Below is an example solution, including an explanation. This is the kind of
+"bug" in the algorithm that you should attempt to find. Obviously, you can't
+submit the answer below, but don't worry, there are many more like it!
+
+  > Two passwords that hash to the same location are 11111111 and bbbbbbbb,
+  > and their hash is 10c410c410c410c410c410c410c410c4.
+  >
+  > This is because the Unicode representation for "1" is 49, and the
+  > Unicode representation for "b" is 98. The function uses 49 x 4
+  > for 1 since it is in the "else" category, and 98 x 2 for b since
+  > it is in the lowercase category, and these both equal 196.
+
