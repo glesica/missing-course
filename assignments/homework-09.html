@@ -285,6 +285,12 @@
 <p>You can also download the code: <a href="dumb_hash.py">dumb_hash.py</a>.</p>
 <p>Analyze the code above and find two passwords that will hash to the same value (collide). Submit both of them, along with their hash value. You don’t need to submit anything else.</p>
 <p>You may need to look up what the <code>hex</code> and <code>ord</code> functions do, in particular. You should also probably place the code in a script so that you can run it to check your work.</p>
+<h2 id="example-solution">Example Solution</h2>
+<p>Below is an example solution, including an explanation. This is the kind of “bug” in the algorithm that you should attempt to find. Obviously, you can’t submit the answer below, but don’t worry, there are many more like it!</p>
+<blockquote>
+<p>Two passwords that hash to the same location are 11111111 and bbbbbbbb, and their hash is 10c410c410c410c410c410c410c410c4.</p>
+<p>This is because the Unicode representation for “1” is 49, and the Unicode representation for “b” is 98. The function uses 49 x 4 for 1 since it is in the “else” category, and 98 x 2 for b since it is in the lowercase category, and these both equal 196.</p>
+</blockquote>
 
 <div id="after">
     <a href="#">Back to top</a>
