@@ -26,5 +26,6 @@ directory contains resources and assignments for each.
 
 These may be added to the course in the future.
 
-  1. [Concurrency and Parallelism](xx-concurrency/)
+  1. [Type Systems](xx-type-systems/)
+  2. [Concurrency and Parallelism](xx-concurrency/)
 
